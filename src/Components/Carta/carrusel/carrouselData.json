@@ -1,0 +1,24 @@
+{
+   "slides":[
+    {
+        "src": ".//public/imgs/hotel1.jpg",
+        "alt": "imagen 1 for carrousel"
+    },
+    {
+        "src": ".//public/imgs/hotel2.jpg",
+        "alt": "imagen 2 for carrousel"
+    },
+    {
+        "src": ".//public/imgs/hotel3.jpg",
+        "alt": "imagen 3 for carrousel"
+    },
+    {
+        "src": ".//public/imgs/hotel4.jpg",
+        "alt": "imagen 3 for carrousel"
+    },
+    {
+        "src": ".//public/imgs/hotel5.jpg",
+        "alt": "imagen 4 for carrousel"
+    }
+   ] 
+}
