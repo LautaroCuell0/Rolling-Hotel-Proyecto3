@@ -26,7 +26,7 @@ const previouSlide =()=>{
     <BsArrowLeftCircleFill className='arrow arrow-left' onClick={previouSlide}/>
       {data.map((item, idx)=>{
 
-            return <img src={item.src} alt={item.alt} key={idx} className={slide === idx ? 'slide' : 'slide slide-hidden'}/>
+        return <img src={item.src} alt={item.alt} key={idx} className={slide === idx ? 'slide' : 'slide slide-hidden'}/>
 
 
       })}

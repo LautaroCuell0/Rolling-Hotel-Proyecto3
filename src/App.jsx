@@ -24,7 +24,9 @@ function App() {
           <Route path="/SobreNosotros" element={<SobreNosotros/>} />
           <Route path="/" element={<>
             <ButtonWsp />
+            <div className="back-img">
             <Carta />
+            </div>
             <CardHab />
             <Carrusel data={slides} />
             <Servicios />
