@@ -28,12 +28,9 @@ function App() {
             <CardHab />
             <Carrusel data={slides} />
             <Servicios />
-            
           </>
           }/>
           <Route path="/Contacto" element={<Contacto/>} />
-
-
         </Routes>
         <Footer />
       </BrowserRouter>

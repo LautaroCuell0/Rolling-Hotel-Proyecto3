@@ -10,11 +10,7 @@ function Carta(){
             <div className="clas-presentacion">
                 <h1>BIENVENIDO</h1>
                 <h2>ROLLING-HOTEL</h2>
-                {/* <div className="clas-button"><button>CONTACTANOS</button></div> */}
-                <div className="clas-button">
-              <Link to="/Contacto">
-                <button>CONTACTANOS</button>
-              </Link>
+                <div className="clas-button"><Link to="/Contacto"><button>CONTACTANOS</button></Link>
             </div>
             </div>
             <div className="clas-img">
