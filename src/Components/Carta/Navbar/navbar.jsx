@@ -19,7 +19,7 @@ function NavbarMain() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">INICIO</Nav.Link>
+            <Nav.Link href="/">INICIO</Nav.Link>
             <NavDropdown title="HABITACIONES" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Habitacion simple</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -32,7 +32,7 @@ function NavbarMain() {
             </NavDropdown>
             <Nav.Link >LOGIN</Nav.Link>
             <Nav.Link >REGISTRO</Nav.Link>
-            <Nav.Link >SOBRE NOSOTROS</Nav.Link>
+            <Nav.Link href='/SobreNosotros' >SOBRE NOSOTROS</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
