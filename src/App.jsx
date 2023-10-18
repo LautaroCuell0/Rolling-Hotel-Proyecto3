@@ -9,6 +9,7 @@ import Footer from "./Components/Footer/footer"
 import NavbarMain from "./Components/Carta/Navbar/navbar"
 import Servicios from "./Components/Carta/Servicios/servicios"
 import SobreNosotros from "./Components/SobreNosotros/SobreNosotros"
+import Contacto from "./Components/Contacto/Contacto";
 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
             <Servicios />
           </>
           }/>
-
+          <Route path="/Contacto" element={<Contacto/>} />
         </Routes>
         <Footer />
       </BrowserRouter>
