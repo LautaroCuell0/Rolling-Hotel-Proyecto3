@@ -1,0 +1,67 @@
+.texto{
+    color: black;
+    background-color: white ;
+    border: solid black 4px;
+}
+.sobre-nosotros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00304E;
+    overflow: hidden
+}
+.contenedor{
+    width: 970px;
+    height: 430px;
+}
+.contenedor-hijo img {
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s;
+}
+.contenedor-hijo img:hover{
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.imagen-con-texto {
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s;
+}
+.imagen-con-texto p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+.imagen-con-texto:hover img {
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+.imagen-con-texto h6 {
+    
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    opacity: 1;
+    transition: opacity .5s;
+}
+.imagen-con-texto:hover p {
+opacity: 1;
+}
+.imagen-con-texto:hover h6 {
+    opacity: 0;
+}
