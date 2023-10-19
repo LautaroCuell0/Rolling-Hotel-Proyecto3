@@ -1,0 +1,111 @@
+/* presentacion card */
+.cover-clasCard{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+    padding-top: 20px;
+    align-items: center;
+}
+.clas-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 30px;
+    align-items: center;
+    gap: 30px;
+    background-color: #D9D9D9;
+    width: 650px;
+    height: 270px;
+    border-radius: 50px 130px 130px 50px;
+    box-shadow: 15px 15px 20px 0px #6a6e73;
+}
+.clas-img img{
+    width: 330px;
+    height: 330px;
+    border-radius: 100%;
+}
+
+.clas-presentacion{
+    color: #00304E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.clas-presentacion h1{
+    height: 10px;
+    font-size: 45px;
+    font-family: 'Jost', sans-serif;
+}
+.clas-presentacion h2{
+    height: 10px;
+    font-size: 35px;
+    font-family: 'Jost', sans-serif;
+}
+.clas-button button{
+    background-color: #00304E;
+    width: 150px;
+    height: 35px;
+    border-radius: 50px;
+    color: #D9D9D9;
+    border-bottom: #00FF0000;
+    border-left: #00FF0000;
+    border-right: #00FF0000;
+    border-top: #00FF0000;
+    margin-top: 30px;
+    font-family: 'Jost', sans-serif;
+}
+.clas-button button:hover{
+    background-color: #007FCF;
+    color: #00304E;
+}
+
+@media (max-width: 800px) {
+    .clas-img img{
+        width: 250px;
+        height: 250px;
+    }
+    .clas-card{
+        width: 600px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 650px) {
+    .clas-img img{
+        width: 200px;
+        height: 200px;
+    }
+    .clas-card{
+        width: 500px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 540px) {
+    .cover-clasCard{
+        height: 700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .clas-card{
+        height: 400px;
+        width: 350px;
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    .clas-button button{
+        width: 200px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 400px) {
+    .clas-card{
+        width: 300px;
+    }
+}
