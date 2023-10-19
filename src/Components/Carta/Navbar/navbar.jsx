@@ -15,7 +15,7 @@ function NavbarMain() {
 
       <Navbar expand="lg" className="back-navbar"  data-bs-theme="dark">
       <Container className='contenido'>
-        <Navbar.Brand href="#home"><img  className='img-logo' src=".//public/imgs/main-logo.jpeg" alt="" /></Navbar.Brand>
+        <Navbar.Brand href="/"><img  className='img-logo' src=".//public/imgs/main-logo.jpeg" alt="" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">

@@ -1,5 +1,6 @@
 import React from "react";
 import './Card-Hab.css'
+import {Link} from 'react-router-dom'
 
 function CardHab(){
       return(
@@ -16,7 +17,7 @@ function CardHab(){
             <img src="https://www.derbyhotels.com/files/img/img_s/as-single-4-782.jpg" alt="" />
         </div>
         <div className="button-hab">
-            <button>VER</button>
+            <Link to="/Habitaciones-inicio"><button>VER</button></Link>
         </div>
         </div>
 
