@@ -1,0 +1,128 @@
+.img-reservacion img{
+    width: 400px;
+    border-radius: 40px;
+}
+.container-detalles {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+    background: url(https://images.pexels.com/photos/1843717/pexels-photo-1843717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+}
+
+.reservacion{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cover-check{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.checkIn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #00304E;
+    color: #D9D9D9;
+    gap: 5px;
+    font-family: 'Jost', sans-serif;
+}
+
+.checkIn img{
+    width: 30px;
+}
+
+
+.checkOut{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #00304E;
+    color: #D9D9D9;
+    gap: 5px;
+    font-family: 'Jost', sans-serif;
+}
+
+.checkOut img{
+    width: 30px;
+}
+
+.beneficios {
+    margin-top: 20px;
+}
+.beneficios ul li{
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Jost', sans-serif;
+}
+
+.button-reservacion{
+    display: flex;
+    justify-content: center;
+}
+.button-reservacion button{
+    width: 200px;
+    background-color: #00304E;
+    height: 38px;
+    border-radius: 40px;
+    color: #D9D9D9;
+    font-family: 'Jost', sans-serif;
+    border-bottom: #00FF0000;
+    border-left: #00FF0000;
+    border-right: #00FF0000;
+    border-top: #00FF0000;
+}
+
+
+@media (max-width:850px) {
+    .cover-check{
+        flex-direction: column;
+    }
+}
+
+@media (max-width:700px) {
+    .button-reservacion button{
+        width: 150px;
+    }
+    .img-reservacion img{
+        width: 350px;
+    }
+}
+
+@media (max-width:600px) {
+    .container-detalles{
+        flex-direction: column;
+    }
+    .cover-check{
+        flex-direction: row;
+    }
+    .button-reservacion button{
+        width: 200px;
+    }
+}
+
+@media (max-width:400px) {
+    .img-reservacion img{
+        width: 280px;
+    }
+    .checkIn {
+        width: 130px;
+    }
+    .checkOut {
+        width: 130px;
+    }
+}

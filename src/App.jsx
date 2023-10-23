@@ -10,6 +10,8 @@ import NavbarMain from "./Components/Carta/Navbar/navbar"
 import Servicios from "./Components/Carta/Servicios/servicios"
 import SobreNosotros from "./Components/SobreNosotros/SobreNosotros"
 import Contacto from "./Components/Contacto/Contacto";
+import HabitacionesInicio from "./Habitaciones/Habitaciones-inicio";
+import DetalleHab from "./Detalles-hab/detalle-hab";
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           </>
           }/>
           <Route path="/Contacto" element={<Contacto/>} />
+          <Route path="/Habitaciones-inicio" element={<HabitacionesInicio/>} />
+          <Route path="/detalle-hab" element={<DetalleHab/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
