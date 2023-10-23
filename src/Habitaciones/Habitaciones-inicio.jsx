@@ -1,5 +1,5 @@
 import React from "react";
-import './Habitaciones.css'
+import './Habitaciones-inicio.css'
 import ButtonWsp from "../Components/Carta/botonWsp/botonWsp";
 import { Link } from "react-router-dom";
 
