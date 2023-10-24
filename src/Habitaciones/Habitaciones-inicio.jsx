@@ -3,7 +3,7 @@ import './Habitaciones-inicio.css'
 import ButtonWsp from "../Components/Carta/botonWsp/botonWsp";
 import { Link } from "react-router-dom";
 
-function HabitacionesInicio(){
+function HabitacionesInicio({imagen, titulo, detalle}){
     return(
         <>
         <ButtonWsp/>
@@ -20,11 +20,11 @@ function HabitacionesInicio(){
             </div>
             <div className="cover-ofert">
             <div className="cardOfert-habitacion">
-                 <img src="https://www.hotelsillot.com/cache/56/85/56855966d0e2488af55c2824d452614d.jpg" alt="" />
+                 <img src={imagen} alt="" />
                  <div className="info-ofertCard">
-                    <h2>HABITACION SIMPLE ESTANDAR</h2>
+                    <h2>{titulo}</h2>
                     <ul>
-                        <li>CAMA INDIVIDUAL</li>
+                        <li>{detalle}</li>
                         <li>MANTENIMIENTO DIARIO</li>
                         <li>WIFI</li>
                         <li>BUFFET</li>
