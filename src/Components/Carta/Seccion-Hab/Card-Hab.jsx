@@ -59,7 +59,7 @@ function CardHab(){
 
         <div className="card-hab">
         <div className="titulo-hab">
-            <h4>HABITACION TRIPLE</h4>
+            <h4>HABITACION TRIPLE -</h4>
         </div>
         <div className="img-hab">
             <img src="https://www.hoteloceanic.fr/wp-content/uploads/sites/46/2022/09/20220913_112700-1-800x600.jpg" alt="" />
