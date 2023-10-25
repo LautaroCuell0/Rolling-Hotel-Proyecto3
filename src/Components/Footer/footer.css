@@ -1,30 +1,38 @@
 .cover-footer{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     background-color: #71899A;
     padding: 20px;
     border-radius: 40px 40px 0px 0px;
     width: 1200px;
     padding: 10px;
+    align-items: center;
 }
 
+.list-footer ul{
+    text-decoration: none;
+}
 .footer-hotel img {
     width: 150px;
     height: 150px;
     border-radius: 70px;
 }
+
 .footer-hotel{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
 .footer-hotel ul li{
     text-decoration: none;
     list-style: none;
     color: #00304E;
+    font-family: 'Jost', sans-serif;
+    font-size: 19px;
 }
 
 .back-footer{
@@ -34,6 +42,54 @@
     padding-top: 50px;
 }
 
+.redes-footer{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.redes-footer img{
+    width: 50px;
+}
+
+.footer-X{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width: 90px;
+    border-radius: 50px;
+}
+.footer-X:hover{
+    background-color: #00304E;
+}
+
+.footer-ig{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width: 90px;
+    border-radius: 50px;
+}
+
+.footer-ig:hover{
+    background-color: #00304E;
+}
+
+.footer-tw{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90px;
+    width: 90px;
+    border-radius: 50px;
+}
+.footer-tw:hover{
+    background-color: #00304E;
+}
 
 @media (max-width: 675px) {
     .footer-hotel{
