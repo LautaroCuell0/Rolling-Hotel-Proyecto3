@@ -80,5 +80,6 @@ function CardHab(){
         />
       )
 }
+//cambia el valor de un estado
 
 export default CardHab
