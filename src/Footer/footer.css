@@ -1,0 +1,53 @@
+.cover-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #71899A;
+    padding: 20px;
+    border-radius: 40px 40px 0px 0px;
+    width: 1200px;
+    padding: 10px;
+}
+
+.footer-hotel img {
+    width: 150px;
+    height: 150px;
+    border-radius: 70px;
+}
+.footer-hotel{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-hotel ul li{
+    text-decoration: none;
+    list-style: none;
+    color: #00304E;
+}
+
+.back-footer{
+    background-color: #00304E;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+
+@media (max-width: 675px) {
+    .footer-hotel{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-hotel img{
+        margin-bottom: 20px;
+    }
+    .cover-footer{
+        width: 600px;
+    }
+    .back-footer{
+        display: flex;
+        justify-content: center;
+    }
+}
