@@ -3,14 +3,14 @@ import './Habitaciones-inicio.css'
 import ButtonWsp from "../Components/Carta/botonWsp/botonWsp";
 import { Link } from "react-router-dom";
 
-function HabitacionesInicio({imagen, titulo, detalle}){
+function HabitacionesInicio(){
     return(
         <>
         <ButtonWsp/>
         <section className="habitacion-seccion">
         <div>
             <div className="ofertas-hab">
-                <h1>DESCUBRE NUESTRAS HABITACIONES </h1>
+                <div className="h1-ofertas"><h1>DESCUBRE NUESTRAS OFERTAS SEMANALES </h1></div>
                 <section className="carrousel-oferts">
                      <img src="https://hotelvilaramerica.com/images/Habitacion-Hotel-3-Estrellas.jpg" alt="" />
                      <img src="https://media.ambito.com/p/0c5616e28bf58d0403a76b5cc372f420/adjuntos/239/imagenes/036/681/0036681201/1200x675/smart/2jpg.jpg" alt="" />
@@ -20,11 +20,10 @@ function HabitacionesInicio({imagen, titulo, detalle}){
             </div>
             <div className="cover-ofert">
             <div className="cardOfert-habitacion">
-                 <img src={imagen} alt="" />
+                 <img src='https://www.hotelmedici.com/images/stories/camere/singola_1200/singola_1_1200.jpg' alt="" />
                  <div className="info-ofertCard">
-                    <h2>{titulo}</h2>
+                    <h2>HABITACION SIMPLE</h2>
                     <ul>
-                        <li>{detalle}</li>
                         <li>MANTENIMIENTO DIARIO</li>
                         <li>WIFI</li>
                         <li>BUFFET</li>
