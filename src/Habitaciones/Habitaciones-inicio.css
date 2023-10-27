@@ -2,14 +2,15 @@
     background: url(https://images.pexels.com/photos/1843717/pexels-photo-1843717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
 }
 
-.h1-habitaciones{
+.h1-ofertas{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
-.h1-habitaciones h1{
+.h1-ofertas h1{
     color: #00304E;
-    font-family: 'Jost', sans-serif;
 }
+
 
 .ofertas-hab{
     display: flex;
@@ -114,22 +115,17 @@
 
 
 
+
 @media (max-width: 740px) {
     .cardOfert-habitacion ul {
         width: 370px;
         margin-top: 10px;
-    }
-    .ofertas-hab h1{
-        font-size: 30px;
     }
     .cardOfert-habitacion{
         display: flex;
         flex-direction: column;
         height: 450px;
         width: 350px;
-    }
-    .cardOfert-habitacion img{
-        height: 200px;
     }
     .info-ofertCard{
         display: flex;
@@ -140,8 +136,42 @@
     .info-ofertCard h2{
         font-size: 22px;
     }
+
+     .carrousel-oferts{
+        width: 500px;
+    } 
+    
+    .carrousel-oferts img:hover{
+        cursor: crosshair;
+        width: 400px;
+        opacity: 1;
+    
+    }
+}
+
+@media (max-width:580px) {
     .carrousel-oferts{
+        width: 400px;
+    } 
+    
+    .carrousel-oferts img:hover{
+        cursor: crosshair;
         width: 300px;
+        opacity: 1;
+    
+    }
+}
+
+@media (max-width:580px) {
+    .carrousel-oferts{
+        width: 350px;
+    } 
+    
+    .carrousel-oferts img:hover{
+        cursor: crosshair;
+        width: 200px;
+        opacity: 1;
+    
     }
 }
 

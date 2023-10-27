@@ -11,8 +11,8 @@ function Footer (){
                 <img src=".//public/imgs/main-logo.jpeg" alt="" />
                 <div className="list-footer">
                     <ul>
-                        <Link to={'/'}><li>INICIO</li></Link>
-                        <Link to={'/SobreNosotros'}> <li>SOBRE NOSOTROS</li></Link>
+                        <a href="/"><li>INICIO</li></a>
+                        <a href="./SobreNosotros"><li>SOBRE NOSOTROS</li></a>
                         <li>LOGIN</li>
                     </ul>
                 </div>
