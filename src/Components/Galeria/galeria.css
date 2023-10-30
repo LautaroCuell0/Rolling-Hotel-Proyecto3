@@ -1,0 +1,13 @@
+
+
+.div-galeria{
+    margin: 0;
+    padding: 0;
+    background-color: #00304e;
+    color: #8ca2af;
+    font-size: xx-small;
+}
+.viewer img{    
+    width: auto;
+    height: auto;
+}

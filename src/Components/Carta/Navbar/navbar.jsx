@@ -30,6 +30,7 @@ function NavbarMain() {
               </NavDropdown.Item>
               
             </NavDropdown>
+            <Nav.Link href="/Galeria">GALERIA</Nav.Link>
             <Nav.Link >LOGIN</Nav.Link>
             <Nav.Link >REGISTRO</Nav.Link>
             <Nav.Link href='/SobreNosotros' >SOBRE NOSOTROS</Nav.Link>
