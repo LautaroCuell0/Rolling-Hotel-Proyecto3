@@ -12,7 +12,7 @@ import SobreNosotros from "./Components/SobreNosotros/SobreNosotros"
 import Contacto from "./Components/Contacto/Contacto";
 import HabitacionesInicio from "./Habitaciones/Habitaciones-inicio";
 import DetalleHab from "./Detalles-hab/detalle-hab";
-
+import Galeria from "./Components/Galeria/galeria"
 
 function App() {
 
@@ -34,6 +34,7 @@ function App() {
             <Servicios />
           </>
           }/>
+          <Route path="/Galeria" element={<Galeria/>} />
           <Route path="/Contacto" element={<Contacto/>} />
           <Route path="/Habitaciones-inicio" element={<HabitacionesInicio/>} />
           <Route path="/detalle-hab" element={<DetalleHab/>}/>
