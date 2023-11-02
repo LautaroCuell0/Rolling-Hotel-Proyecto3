@@ -14,6 +14,7 @@ import HabitacionesInicio from "./Habitaciones/Habitaciones-inicio";
 import DetalleHab from "./Detalles-hab/detalle-hab";
 import Galeria from "./Components/Galeria/galeria"
 import UserList from "./Admin/crudUsers";
+import Login from "./Components/login/login";
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
       
         <Routes>
           <Route path="/SobreNosotros" element={<SobreNosotros/>} />
+          <Route path="/login" element={<Login/>}/>
           <Route path="/" element={<>
             <ButtonWsp />
             <div className="back-img">
