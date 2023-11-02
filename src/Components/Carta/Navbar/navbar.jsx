@@ -34,6 +34,7 @@ function NavbarMain() {
             <Nav.Link >LOGIN</Nav.Link>
             <Nav.Link >REGISTRO</Nav.Link>
             <Nav.Link href='/SobreNosotros' >SOBRE NOSOTROS</Nav.Link>
+            <Nav.Link href='/crudUsers' >⚙</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
