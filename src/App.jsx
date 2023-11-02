@@ -13,6 +13,7 @@ import Contacto from "./Components/Contacto/Contacto";
 import HabitacionesInicio from "./Habitaciones/Habitaciones-inicio";
 import DetalleHab from "./Detalles-hab/detalle-hab";
 import Galeria from "./Components/Galeria/galeria"
+import UserList from "./Admin/crudUsers";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/Contacto" element={<Contacto/>} />
           <Route path="/Habitaciones-inicio" element={<HabitacionesInicio/>} />
           <Route path="/detalle-hab" element={<DetalleHab/>}/>
+          <Route path="/crudUsers" element={<UserList/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>
