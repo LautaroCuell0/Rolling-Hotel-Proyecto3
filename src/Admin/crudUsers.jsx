@@ -97,6 +97,7 @@ const UserList=()=>{
             <input className="form-control" name='password' required minlength="5" type="password" placeholder="Contraseña" value={formData.password} onChange={handleChange} />
             <input className="btn btn-primary"   type="submit" value='Agegar'/>
             </div>
+            
         </form>
     </div>
 
