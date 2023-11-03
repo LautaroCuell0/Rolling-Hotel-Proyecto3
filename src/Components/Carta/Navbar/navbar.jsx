@@ -12,7 +12,6 @@ function NavbarMain() {
   return (
 
     <div className='cover-nav'>
-
       <Navbar expand="lg" className="back-navbar" data-bs-theme="dark">
         <Container className='contenido'>
           <Navbar.Brand href="/"><img className='img-logo' src=".//public/imgs/main-logo.jpeg" alt="" /></Navbar.Brand>
@@ -43,6 +42,7 @@ function NavbarMain() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
     </div>
   );
 
