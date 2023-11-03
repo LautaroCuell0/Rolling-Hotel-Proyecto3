@@ -32,7 +32,7 @@ export function Login() {
   return (
     <>
 
-    <h1>holaaaaaaaaaaa</h1>
+    <h1 className='h11'>holaaaaaaaaaaa</h1>
         {values.map((v, idx) => (
         <Button key={idx} className="me-2 mb-2" onClick={() => handleShow(v)}>
             Login
