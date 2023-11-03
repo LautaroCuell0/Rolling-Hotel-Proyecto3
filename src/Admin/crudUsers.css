@@ -1,6 +1,6 @@
 .container-max{
     box-shadow: 5px 5px 30px black;
-    height: 70px;
+    /* height: 70px; */
     width: 500px;
     display: flex;
     align-items: center;
@@ -34,9 +34,10 @@
 
 .container-form{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 10px;
+    
 }
 
 .container-form input{
@@ -45,6 +46,7 @@
     background-color: white;
     border: none;
     color: black;
+    
 }
 
 .elementos-todo{
