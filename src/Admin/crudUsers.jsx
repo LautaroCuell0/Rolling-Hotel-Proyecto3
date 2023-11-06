@@ -90,7 +90,7 @@ const UserList=()=>{
     <>
     <div className='cover-container'>
     <div className="container-max  cover-form">
-        <form className="input-group shadow rounded p-3" onSubmit={addTodo}>
+        <form className="input-group shadow rounded p-3" onSubmit={addTodo} formulario>
             <div className='container-form'>
             <input className="form-control" name='nombre' required minlength="5"  type="text" placeholder="Nombre" value={formData.nombre} onChange={handleChange}/>
             <input className="form-control" name='email' required minlength="5"  type="email" placeholder="Email" value={formData.email} onChange={handleChange}/>
