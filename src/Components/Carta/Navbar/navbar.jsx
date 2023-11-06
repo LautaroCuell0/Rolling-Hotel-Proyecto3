@@ -30,8 +30,8 @@ function NavbarMain() {
 
               </NavDropdown>
               <Nav.Link href="/Galeria">GALERIA</Nav.Link>
-              <Nav.Link >LOGIN</Nav.Link>
-              <Nav.Link >REGISTRO</Nav.Link>
+              <Nav.Link href="/login">LOGIN</Nav.Link>
+              <Nav.Link href="/registro">REGISTRO</Nav.Link>
               <Nav.Link href='/SobreNosotros' >SOBRE NOSOTROS</Nav.Link>
               <NavDropdown title="⚙" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/crudUsers">Administrador de usuarios</NavDropdown.Item>
