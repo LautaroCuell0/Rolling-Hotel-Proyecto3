@@ -1,6 +1,15 @@
+
+.input-group{
+    display: flex;
+    justify-content: center;
+}
+
+.input-group input{
+     width: 300px;
+}
 .container-max{
     box-shadow: 5px 5px 30px black;
-    height: 70px;
+    /* height: 70px; */
     width: 500px;
     display: flex;
     align-items: center;
@@ -9,9 +18,13 @@
     background-color: #00304E;
     margin-top: 30px;
 }
+.input-group{
+    display: flex;
+    justify-content: center;
+}
 
 .cover-container{
-    background-color: #00304E;
+    background-color: aliceblue;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -29,14 +42,15 @@
     width: 500px;
     border-radius: 10px;
     padding: 10px;
-    color: aliceblue;
+    color: #00304E;
 }
 
 .container-form{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 10px;
+    
 }
 
 .container-form input{
@@ -45,6 +59,7 @@
     background-color: white;
     border: none;
     color: black;
+    
 }
 
 .elementos-todo{
@@ -68,5 +83,5 @@
     margin-top: 15px;
 }
 .total-info span{
-    color: white;
+    color: #00304E;
 }

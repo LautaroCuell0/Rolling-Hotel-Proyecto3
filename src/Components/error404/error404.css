@@ -1,0 +1,26 @@
+.body-error{
+    background-color: #00304E;
+}
+    
+
+.img-error{
+    width: 38%;
+    height: 100%;
+}
+.titulo-error{
+    font-size: 900%;
+    color: white;
+}
+.boton-error{
+    border: 1px solid white;
+    width: 250px;
+    height: 70px;
+    border-radius: 50px;
+    color: white;
+    font-size: x-large;
+    margin-top: 10%;
+}
+.boton-error:hover{
+    background-color: white;
+    color: #00304E;
+}
