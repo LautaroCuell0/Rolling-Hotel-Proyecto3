@@ -19,7 +19,7 @@ function NavbarMain() {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="/">INICIO</Nav.Link>
-              <NavDropdown title="HABITACIONES" id="basic-nav-dropdown">
+              {/* <NavDropdown title="HABITACIONES" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Habitacion simple</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Habitacion doble
@@ -28,7 +28,8 @@ function NavbarMain() {
                   Habitacion triple
                 </NavDropdown.Item>
 
-              </NavDropdown>
+              </NavDropdown> */}
+              <Nav.Link href="/Habitaciones-inicio">HABITACIONES</Nav.Link>
               <Nav.Link href="/Galeria">GALERIA</Nav.Link>
               <Nav.Link href="/login">LOGIN</Nav.Link>
               <Nav.Link href="/registro">REGISTRO</Nav.Link>
