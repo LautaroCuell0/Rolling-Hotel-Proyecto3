@@ -1,3 +1,50 @@
+.cover-info{
+    background-color: #00304E;
+}
+.h1-sobreNosotros{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h1-sobreNosotros h1{
+    color: #D9D9D9;
+    font-family: 'Jost', sans-serif;
+}
+
+.Mision-sobreNosotros{
+    background-color: #008FE8;
+    font-family: 'Jost', sans-serif;
+    width: 1200px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 0px 50px 50px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.Mision-sobreNosotros img{
+    width: 150px;
+}
+
+.Vision-sobreNosotros{
+    background-color: #008FE8;
+    font-family: 'Jost', sans-serif;
+    width: 1200px;
+    padding: 20px;
+    font-size: 18px;
+    border-radius: 0px 50px 50px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;
+}
+.Vision-sobreNosotros img{
+    width: 200px;
+}
+
 .texto{
     color: black;
     background-color: white ;
@@ -5,7 +52,7 @@
 }
 .sobre-nosotros{
     display: flex;
-    justify-content: center;
+    justify-content: center;    
     align-items: center;
     background-color: #00304E;
     overflow: hidden
@@ -13,6 +60,7 @@
 .contenedor{
     width: 970px;
     height: 430px;
+    margin-top: 30px;
 }
 .contenedor-hijo img {
     width: 0px;
@@ -64,4 +112,110 @@ opacity: 1;
 }
 .imagen-con-texto:hover h6 {
     opacity: 0;
+}
+
+
+@media (max-width:1029.33px) {
+    .Mision-sobreNosotros{
+        width: 900px;
+    }
+    .Vision-sobreNosotros{
+        width: 900px;
+    }
+}
+
+@media (max-width:940px) {
+    .Mision-sobreNosotros{
+        width: 800px;
+    }
+    .Vision-sobreNosotros{
+        width: 800px;
+    }
+}
+
+@media (max-width:850px) {
+    .Mision-sobreNosotros{
+        width: 700px;
+    }
+    .Vision-sobreNosotros{
+        width: 700px;
+    }
+}
+
+@media (max-width:750px) {
+    .Mision-sobreNosotros{
+        width: 600px;
+    }
+    .Vision-sobreNosotros{
+        width: 600px;
+    }
+}
+
+@media (max-width:630px) {
+    .Mision-sobreNosotros{
+        width: 500px;
+        flex-wrap: wrap;
+    }
+    .Mision-sobreNosotros img{
+        width: 200px;
+    }
+    .Vision-sobreNosotros{
+        width: 500px;
+        flex-wrap: wrap;
+    }
+    .Vision-sobreNosotros img{
+        width: 200px;
+    }
+}
+
+@media (max-width:540px) {
+    .Mision-sobreNosotros{
+        width: 400px;
+        flex-wrap: wrap;
+    }
+    .Mision-sobreNosotros img{
+        width: 200px;
+    }
+    .Vision-sobreNosotros{
+        width: 400px;
+        flex-wrap: wrap;
+    }
+    .Vision-sobreNosotros img{
+        width: 200px;
+    }
+}
+
+@media (max-width:440px) {
+    .Mision-sobreNosotros{
+        width: 350px;
+        flex-wrap: wrap;
+    }
+    .Mision-sobreNosotros img{
+        width: 200px;
+    }
+    .Vision-sobreNosotros{
+        width: 350px;
+        flex-wrap: wrap;
+    }
+    .Vision-sobreNosotros img{
+        width: 200px;
+    }
+}
+
+
+@media (max-width:540px) {
+    .Mision-sobreNosotros{
+        width: 330px;
+        flex-wrap: wrap;
+    }
+    .Mision-sobreNosotros img{
+        width: 200px;
+    }
+    .Vision-sobreNosotros{
+        width: 330px;
+        flex-wrap: wrap;
+    }
+    .Vision-sobreNosotros img{
+        width: 200px;
+    }
 }

@@ -4,11 +4,27 @@ import './SobreNosotros.css'
 const SobreNosotros = () => {
   return (
     <>
-        <div className='texto p-3'>
-        <h2 className='text-center'>Somos Rolling Hotel </h2>
-          <p>MISIÓN: Nuestra misión es brindar a nuestros huéspedes una experiencia excepcional de hospitalidad y comodidad durante su estancia. Nos esforzamos por ofrecer un ambiente acogedor y servicios de alta calidad que superen las expectativas de nuestros clientes. Estamos comprometidos con la satisfacción de nuestros huéspedes, el desarrollo de nuestro equipo y la contribución positiva a las comunidades en las que operamos.</p>
-          <p>VISIÓN: Nuestra visión es ser reconocidos como el destino preferido para viajeros de todo el mundo. Nos esforzamos por ser líderes en la industria hotelera, ofreciendo alojamientos de lujo, servicios excepcionales y experiencias inolvidables. Buscamos constantemente la innovación y la sostenibilidad en nuestras operaciones y ser una fuerza positiva para el turismo y el desarrollo local.</p>
+    <div className='cover-info'>
+        <div className='h1-sobreNosotros'>
+          <h1>SOMOS ROLLING HOTEL</h1>
         </div>
+        <div className='Mision-sobreNosotros'>
+        <p>MISIÓN: Nuestra misión es brindar a nuestros huéspedes una experiencia excepcional de hospitalidad 
+          y comodidad durante su estancia. Nos esforzamos por ofrecer un ambiente acogedor y servicios de alta 
+          calidad que superen las expectativas de nuestros clientes. Estamos comprometidos con la satisfacción 
+          de nuestros huéspedes, el desarrollo de nuestro equipo y la contribución positiva a las comunidades 
+          en las que operamos.</p>
+        <img src=".//public/imgs/mision-img-2.png" alt="" />
+        </div>
+
+        <div className='Vision-sobreNosotros'>
+        <p>VISIÓN: Nuestra visión es ser reconocidos como el destino preferido para viajeros de todo el mundo. 
+          Nos esforzamos por ser líderes en la industria hotelera, ofreciendo alojamientos de lujo, servicios 
+          excepcionales y experiencias inolvidables. Buscamos constantemente la innovación y la sostenibilidad 
+          en nuestras operaciones y ser una fuerza positiva para el turismo y el desarrollo local.</p>
+          <img src=".//public/imgs/vision.png" alt="" />
+        </div>
+    </div>
         <section class="sobre-nosotros p-2 ">
           <div class="contenedor d-flex col-xl-6 col-md-12 ">
             <div class="contenedor-hijo d-flex imagen-con-texto mx-0">
