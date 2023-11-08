@@ -7,11 +7,6 @@ export function Login() {
     const[nombre, setNombre]= useState("")
     const [contraseña, setContraseña]= useState("")
     const [error, SetError] = useState(false)
-    const values = [true];
-    const [fullscreen, setFullscreen] = useState(true);
-    const [show, setShow] = useState(false);
-    
-
     const handleSumbit = (evento) =>{
         evento.preventDefault()
         if(nombre === "" || contraseña === ""){
@@ -24,25 +19,12 @@ export function Login() {
 
     
 
-    function handleShow(breakpoint) {
-    setFullscreen(breakpoint);
-    setShow(true);
-}
+    
 
-  return (
+return (
     <>
 
-        {values.map((v, idx) => (
-        <Button key={idx} className="me-2 mb-2" onClick={() => handleShow(v)}>
-            Login
-        {typeof v === 'string' && `below ${v.split('-')[0]}`}
-        </Button>
-        ))}
-    <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-        <Modal.Header closeButton>
-        <Modal.Title></Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='p-0 d-flex'>
+        
             <div className='d-flex container-fluid p-0'>  
             <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Registro-Logo' />
                 <div className='div-padre-formulario d-flex justify-content-center '>
@@ -71,9 +53,7 @@ export function Login() {
                 </form>
         </div>
         </div>
-            </Modal.Body>
             
-    </Modal>
     </>
     );
 }
