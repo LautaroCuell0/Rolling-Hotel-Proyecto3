@@ -1,4 +1,57 @@
+.seccion-servicios{
+    background: url(/public/imgs/fondo-hab.jpg);
+    padding: 20px;
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
 
+.h1-servicios{
+    display: flex;
+    justify-content: center;
+    font-family: 'Jost', sans-serif;
+    color: #00304E;
+}
+.container-servicios{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.servicio-img img{
+    width: 150px;
+    
+    border-radius: 20px;
+}
+.servicio-img{
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    background-color: aliceblue;
+    border-radius: 20px 20px 0px 0px;
+}
+.cover-servicios{
+     background-color: #00304E;
+     width: 250px;
+     border-radius: 20px;
+}
+
+.servicio-p p{
+    color: aliceblue;
+    font-family: 'Jost', sans-serif;
+}
+.servicio-p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* 
 .servicios-iconos img{
     width: 100px;
 }
@@ -88,4 +141,4 @@
         height: 700px;
     }
 
-}
+} */
