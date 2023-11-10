@@ -12,6 +12,13 @@ import SobreNosotros from "./Components/SobreNosotros/SobreNosotros"
 import Contacto from "./Components/Contacto/Contacto";
 import HabitacionesInicio from "./Habitaciones/Habitaciones-inicio";
 import DetalleHab from "./Detalles-hab/detalle-hab";
+import Galeria from "./Components/Galeria/galeria"
+import UserList from "./Admin/crudUsers";
+import Login from "./Components/login/login";
+import Registro from "./Components/registro/registro"
+import CrudHab from "./Admin/CrudHab";
+import Error404 from "./Components/error404/error";
+import MyCalendario from "./Calendario/calendario";
 
 
 function App() {
@@ -24,6 +31,8 @@ function App() {
       
         <Routes>
           <Route path="/SobreNosotros" element={<SobreNosotros/>} />
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/registro" element={<Registro/>}/>
           <Route path="/" element={<>
             <ButtonWsp />
             <div className="back-img">
@@ -34,9 +43,14 @@ function App() {
             <Servicios />
           </>
           }/>
+          <Route path="/Galeria" element={<Galeria/>} />
           <Route path="/Contacto" element={<Contacto/>} />
           <Route path="/Habitaciones-inicio" element={<HabitacionesInicio/>} />
           <Route path="/detalle-hab" element={<DetalleHab/>}/>
+          <Route path="/crudUsers" element={<UserList/>}/>
+          <Route path="/CrudHab" element={<CrudHab/>}/>
+          <Route path="/calendario" element={<MyCalendario/>}/>
+          <Route path="*" element={<Error404/>}/>
         </Routes>
         <Footer />
       </BrowserRouter>

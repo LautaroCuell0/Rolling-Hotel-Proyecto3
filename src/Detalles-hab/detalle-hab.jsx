@@ -1,5 +1,6 @@
 import React from "react";
 import './detalle-hab.css'
+import MyCalendario from "../Calendario/calendario";
 
 function DetalleHab(){
 
@@ -10,12 +11,14 @@ function DetalleHab(){
             <div className="reservacion">
                <div className="cover-check">
                <div className="checkIn">
-                  <img src="https://i.pinimg.com/originals/4c/7e/90/4c7e9033546e551003dedba85b3c4f31.png" alt="" />
-                  CHECKIN
+                  <MyCalendario/>
+                  {/* <img src="https://i.pinimg.com/originals/4c/7e/90/4c7e9033546e551003dedba85b3c4f31.png" alt="" />
+                  CHECKIN */}
                   </div>
                <div className="checkOut">
-                  <img src="https://i.pinimg.com/originals/4c/7e/90/4c7e9033546e551003dedba85b3c4f31.png" alt="" />
-                  CHECKOUT
+                  <MyCalendario/>
+                  {/* <img src="https://i.pinimg.com/originals/4c/7e/90/4c7e9033546e551003dedba85b3c4f31.png" alt="" />
+                  CHECKOUT */}
                </div>
                </div>
                <div className="beneficios">
