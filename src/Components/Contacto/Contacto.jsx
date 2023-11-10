@@ -18,6 +18,7 @@ const Contacto = () => {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(formData);
+        enviarEmail()
     }
     function enviarEmail () {
         Email.send({
@@ -79,7 +80,7 @@ const Contacto = () => {
                             />
                         </Form.Group>
                         <div className='d-flex justify-content-center'>
-                            <Button variant="primary" type='submit' onClick={enviarEmail} >Enviar</Button>
+                            <Button variant="primary" type='submit'  >Enviar</Button>
                         </div>
                     </Form>
                 </div>
