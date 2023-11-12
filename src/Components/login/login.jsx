@@ -24,20 +24,24 @@ export function Login() {
 return (
     <>
 
-        
-            <div className='d-flex container-fluid p-0'>  
-            <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Registro-Logo' />
-                <div className='div-padre-formulario d-flex justify-content-center '>
+        <body className='body-login'>
+            <div className='d-flex container-fluid p-0 justify-content-center align-items-center padre-login'>  
+            <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Login-Logo' />
+                <div className='div-padre-formulario-login d-flex justify-content-center align-items-center'>
                 <form 
                 className="d-flex justify-content-center align-items-center"
                 onSubmit={handleSumbit}>
                     <div className='d-flex flex-column'>
+                        <h2 className='titulo-login mb-5'>
+                            Inicia sesion:
+                        </h2>
                         <label htmlFor="">Email</label>
                         <input 
-                        type="text"
+                        type="email"
                         value={nombre}
                         onChange={event => setNombre (event.target.value)}
                         className='input-registro my-2'
+                        required
                         />
                         <label htmlFor="">Contraseña</label>
                         <input 
@@ -45,6 +49,7 @@ return (
                         value={contraseña}
                         onChange={event => setContraseña (event.target.value)}
                         className='input-registro my-2'
+                        required
                         />
                         <a href="" className='my-2'>¿Olvidaste tu contraseña?</a>
                     <button type='sumbit' className='btn-registrarse my-2'>Iniciar Sesion</button>
@@ -53,7 +58,7 @@ return (
                 </form>
         </div>
         </div>
-            
+    </body>        
     </>
     );
 }
