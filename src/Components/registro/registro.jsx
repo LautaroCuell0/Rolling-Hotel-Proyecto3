@@ -20,8 +20,8 @@ const handleInpitChange = (event) =>{
 }
     return (
     <>
-    
-            <div className='d-flex container-fluid p-0'>  
+    <body className='body-registro'>
+            <div className='d-flex container-fluid p-0 padre-registro'>  
                 <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Registro-Logo' />
                 <div className='div-padre-formulario d-flex justify-content-center '>
                     <Form action="" 
@@ -40,6 +40,7 @@ const handleInpitChange = (event) =>{
                         type="text" 
                         name='nombre' 
                         id='nombre'
+                        required
                         // value={usuario.name}
                         className='input-registro my-2'
                         onChange={handleInpitChange}
@@ -49,6 +50,7 @@ const handleInpitChange = (event) =>{
                         type="email"
                         name='email'
                         id='email'
+                        required
                         // value={usuario.email}
                         className='input-registro my-2'
                         onChange={handleInpitChange}
@@ -60,6 +62,7 @@ const handleInpitChange = (event) =>{
                         id='password'
                         className='input-registro my-2'
                         onChange={handleInpitChange}
+                        required
                         />
                         <label htmlFor="">Confirmar contraseña:</label>
                         <input 
@@ -68,13 +71,14 @@ const handleInpitChange = (event) =>{
                         id='repassword'
                         className='input-registro my-2'
                         onChange={handleInpitChange}
+                        required
                         />
                         <button type='sumbit' className='btn-registrarse p-2 mt-5'>Registrarse</button>
                         </div>
                     </Form>
                 </div>
-            </div>      
-        
+            </div>  
+    </body>    
     </>
     );
 }
