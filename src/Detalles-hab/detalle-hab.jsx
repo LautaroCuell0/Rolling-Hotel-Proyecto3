@@ -26,7 +26,8 @@ function DetalleHab(){
                      <li>CAMA INDIVIDUAL</li>
                      <li>MANTENIMIENTO DIARIO</li>
                      <li>WIFI</li>
-                     <li>BIFFET</li>
+                     <li>BUFFET</li>
+                     <li>PRECIO: $12.000</li>
                   </ul>
                </div>
                <div className="button-reservacion"><button>RESERVAR</button></div>
