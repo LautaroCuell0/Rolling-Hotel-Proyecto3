@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import './Contacto.css'
 
 const Contacto = () => {
     const [formData, setFormData] = useState({
@@ -18,7 +19,12 @@ const Contacto = () => {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(formData);
-        enviarEmail()
+        enviarEmail();
+        setFormData({
+            nombre: '',
+            email: '',
+            mensaje: '',
+          });
     }
     function enviarEmail () {
         Email.send({
@@ -35,18 +41,18 @@ const Contacto = () => {
 
     return (
         <>
-            <div className='container row p-5 '>
-                <div className='col-md-6'>
-                    <h3>Contactanos</h3>
+            <div className='contenedor-contacto'>
+                <div className='col-md-6 titulos-contacto'>
+                    <h3>CONTACTANOS</h3>
                     <Form className='md-6' onSubmit={handleSubmit}>
 
                         <Form.Group className="mb-3">
-                            <Form.Label htmlFor="nombre">Nombre</Form.Label>
+                            <Form.Label htmlFor="nombre">NOMBRE</Form.Label>
                             <Form.Control
                                 type="text"
                                 id="nombre"
                                 name="nombre"
-                                placeholder="ingrese su nombre"
+                                placeholder="Ingrese su nombre"
                                 className=""
                                 value={formData.nombre}
                                 onChange={handleChange}
@@ -55,10 +61,10 @@ const Contacto = () => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" >
-                            <Form.Label htmlFor='email'>Email</Form.Label>
+                            <Form.Label htmlFor='email'>EMAIL</Form.Label>
                             <Form.Control
                                 type="email"
-                                placeholder="email@example.com"
+                                placeholder="Email@example.com"
                                 id='email'
                                 name='email'
                                 value={formData.email}
@@ -68,7 +74,7 @@ const Contacto = () => {
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" >
-                            <Form.Label htmlFor='mensaje'>Mensaje</Form.Label>
+                            <Form.Label htmlFor='mensaje'>MENSAJE</Form.Label>
                             <Form.Control as="textarea" rows={3}
                                 type='text'
                                 id='mensaje'
@@ -80,13 +86,13 @@ const Contacto = () => {
                             />
                         </Form.Group>
                         <div className='d-flex justify-content-center'>
-                            <Button variant="primary" type='submit'  >Enviar</Button>
+                            <Button type='submit' className='boton-contacto'>ENVIAR</Button>
                         </div>
                     </Form>
                 </div>
 
                 <div className='col-md-6'>
-                    <img src="../src/assets/img-contactanos.webp" alt="" style={{ width: "400px", height: "400px" }} className='img-fluid' />
+                    <img src="../src/assets/img-contactanos.webp" alt="" className='img-fluid'/>
                 </div>
 
             </div>
