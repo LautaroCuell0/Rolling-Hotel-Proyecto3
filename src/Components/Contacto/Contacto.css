@@ -1,0 +1,42 @@
+.contenedor-contacto{
+    padding: 60px;
+    gap: 50px;
+    background-color: #71899A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 470px;
+}
+
+.img-fluid{
+    width: 400px; 
+}
+
+.boton-contacto {
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: black; 
+    color: #fff;
+  }
+
+  .boton-contacto:hover {
+    background-color: white; 
+  }
+
+.titulos-contacto h3{
+ color: azure;
+ margin-bottom: 20px;
+}
+      
+@media (max-width:750px) {
+    .img-fluid{
+     width: 350px;
+    }
+}
+
+@media (max-width:600px) {
+    .img-fluid{
+     display: none;
+    }
+}
