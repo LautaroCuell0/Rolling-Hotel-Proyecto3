@@ -12,26 +12,23 @@ const UserList=()=>{
         {
            nombre: 'nayeli',
            email: 'nayeli1@gmail.com',
-           password: '12345',
-           isComplete: false,
+           isActive: false,
            id:1
         },
         {
             nombre: 'santi',
             email: 'santi1@gmail.com',
-            password: '12345',
-            isComplete: false,
+            isActive: false,
             id:2
         }
        
        ])
 
-    const completeCount= todoArray.filter( todo=> todo.isComplete === true).length
+    const completeCount= todoArray.filter( todo=> todo.isActive === true).length
     const pendingCount= todoArray.length - completeCount
     const [formData, setFormData] = useState({
         nombre: '',
-        email: '',
-        password: ''
+        email: ''
     })
     const [todoEditId, setTodoEditId] = useState(null)
 
@@ -46,18 +43,17 @@ const UserList=()=>{
           let todo = newTodo.find((todo)=> todo.id === todoEditId)
           todo.nombre = formData.nombre
           todo.email = formData.email
-          todo.password = formData.password
           setTodoArray(newTodo)
           setTodoEditId(null)
-          setFormData({nombre: '',email: '',password: ''})
+          setFormData({nombre: '',email: ''})
       } else {
-        if(formData.nombre !== '' && formData.email !== ''  && formData.password !== ''){
+        if(formData.nombre !== '' && formData.email !== ''){
             const todo = formData
-            todo.isComplete == false
+            todo.isActive == false
             todo.id = Date.now()
     
           setTodoArray([...todoArray, todo])
-          setFormData({nombre: '',email: '', password: ''})
+          setFormData({nombre: '',email: ''})
         }
       }
     }
@@ -70,19 +66,19 @@ const UserList=()=>{
     const toggleTodo=(id)=>{
         const newTodo = [...todoArray]
         let todo = newTodo.find((todo)=> todo.id === id)
-        todo.isComplete = !todo.isComplete
+        todo.isActive = !todo.isActive
         setTodoArray(newTodo)
 
     }
 
     const deleteComplete=()=>{
-         const newTodo = todoArray.filter(todo => todo.isComplete === false)
+         const newTodo = todoArray.filter(todo => todo.isActive === false)
          setTodoArray(newTodo)
     }
 
     const todoEdit=(id)=>{
        const todo = todoArray.find((todo)=> todo.id === id)
-       setFormData({nombre: todo.nombre, email: todo.email, password: todo.password})
+       setFormData({nombre: todo.nombre, email: todo.email})
        setTodoEditId(id)
     }
     
@@ -92,9 +88,8 @@ const UserList=()=>{
     <div className="container-max  cover-form">
         <form className="input-group shadow rounded p-3" onSubmit={addTodo} formulario>
             <div className='container-form'>
-            <input className="form-control" name='nombre' required minlength="5"  type="text" placeholder="Nombre" value={formData.nombre} onChange={handleChange}/>
+            <input className="form-control" name='nombre' required minlength="5"  type="text" placeholder="Nombre completo" value={formData.nombre} onChange={handleChange}/>
             <input className="form-control" name='email' required minlength="5"  type="email" placeholder="Email" value={formData.email} onChange={handleChange}/>
-            <input className="form-control" name='password' required minlength="5" type="password" placeholder="Contraseña" value={formData.password} onChange={handleChange} />
             <input className="btn btn-primary"   type="submit" value='Agegar'/>
             </div>
             
@@ -108,11 +103,10 @@ const UserList=()=>{
         {
             todoArray.map((todo)=>
             <div key={todo.id} className='elementos-todo'>
-               <input type="checkbox" checked={todo.isComplete} onChange={()=>toggleTodo(todo.id)}/>
-               <p className={`p-0 m-0 flex-grow-1 ${todo.isComplete ? 'text-decoration-line-through' : ''}`}>  {todo.nombre}<br/>
-               <span className='text-muted'>Email: {todo.email} |</span>
-               <span className='text-muted'> Contraseña: {todo.password}</span></p>
-               {todo.isComplete && <span className='bg-danger'>Inactivo</span>}
+               <input type="checkbox" checked={todo.isActive} onChange={()=>toggleTodo(todo.id)}/>
+               <p className={`p-0 m-0 flex-grow-1 ${todo.isActive ? 'text-decoration-line-through' : ''}`}>  {todo.nombre}<br/>
+               <span className='text-muted'>Email: {todo.email}</span></p>
+               {todo.isActive && <span className='bg-danger'>Inactivo</span>}
                <button className='btn btn-warning'onClick={()=>todoEdit(todo.id)}>✏</button>
                <button className='btn btn-danger' onClick={()=>deleteTodo(todo.id)}>🗑</button>
             </div>
@@ -124,6 +118,7 @@ const UserList=()=>{
     </div>
     </div>
     </>
+    
    )
 }
 
