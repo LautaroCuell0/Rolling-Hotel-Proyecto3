@@ -19,7 +19,12 @@ const Contacto = () => {
     function handleSubmit(e) {
         e.preventDefault();
         console.log(formData);
-        enviarEmail()
+        enviarEmail();
+        setFormData({
+            nombre: '',
+            email: '',
+            mensaje: '',
+          });
     }
     function enviarEmail () {
         Email.send({
@@ -47,7 +52,7 @@ const Contacto = () => {
                                 type="text"
                                 id="nombre"
                                 name="nombre"
-                                placeholder="ingrese su nombre"
+                                placeholder="Ingrese su nombre"
                                 className=""
                                 value={formData.nombre}
                                 onChange={handleChange}
@@ -59,7 +64,7 @@ const Contacto = () => {
                             <Form.Label htmlFor='email'>EMAIL</Form.Label>
                             <Form.Control
                                 type="email"
-                                placeholder="email@example.com"
+                                placeholder="Email@example.com"
                                 id='email'
                                 name='email'
                                 value={formData.email}
