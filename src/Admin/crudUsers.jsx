@@ -59,8 +59,12 @@ const UserList=()=>{
     }
 
     const deleteTodo = (id)=>{
-       const newTodos = todoArray.filter(todo=> todo.id !== id)
-       setTodoArray(newTodos)
+        const confirmDelete = window.confirm('Estas seguro que deseas eliminarlo? La eliminación será permanente');
+
+        if (confirmDelete) {
+          const newTodos = todoArray.filter((todo) => todo.id !== id);
+          setTodoArray(newTodos);
+        }
     }
 
     const toggleTodo=(id)=>{
@@ -90,7 +94,7 @@ const UserList=()=>{
             <div className='container-form'>
             <input className="form-control" name='nombre' required minlength="5"  type="text" placeholder="Nombre completo" value={formData.nombre} onChange={handleChange}/>
             <input className="form-control" name='email' required minlength="5"  type="email" placeholder="Email" value={formData.email} onChange={handleChange}/>
-            <input className="btn btn-primary"   type="submit" value='Agegar'/>
+             <input className="btn btn-primary"   type="submit" value='Agregar'/> 
             </div>
             
         </form>
