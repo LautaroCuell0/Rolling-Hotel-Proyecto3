@@ -25,14 +25,14 @@ return (
     <>
 
         <body className='body-login'>
-            <div className='d-flex container-fluid p-0 justify-content-center align-items-center padre-login'>  
+            <div className='d-flex container-fluid p-0 justify-content-center align-items-center padre-login py-3'>  
             <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Login-Logo' />
                 <div className='div-padre-formulario-login d-flex justify-content-center align-items-center'>
                 <form 
                 className="d-flex justify-content-center align-items-center"
                 onSubmit={handleSumbit}>
                     <div className='d-flex flex-column'>
-                        <h2 className='titulo-login mb-5'>
+                        <h2 className='titulo-login mb-3'>
                             Inicia sesion:
                         </h2>
                         <label htmlFor="">Email</label>
