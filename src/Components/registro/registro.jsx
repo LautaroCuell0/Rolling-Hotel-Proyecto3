@@ -21,8 +21,8 @@ const handleInpitChange = (event) =>{
     return (
     <>
     <body className='body-registro'>
-            <div className='d-flex container-fluid p-0 padre-registro'>  
-                <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Registro-Logo' />
+            <div className='d-flex container-fluid p-0 padre-registro py-3'>  
+                <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Registro-Logo ' />
                 <div className='div-padre-formulario d-flex justify-content-center '>
                     <Form action="" 
                     onSubmit={event=>{
@@ -30,7 +30,7 @@ const handleInpitChange = (event) =>{
                         props.addUser(usuario)
                         setUsuario(formInicial)
                     }} 
-                    className='d-flex justify-content-center align-items-center'>
+                    className='d-flex justify-content-center align-items-center '>
                         <div className='d-flex flex-column'>
                         <h2 className='titulo-registro mb-5'>
                             Registrate:
