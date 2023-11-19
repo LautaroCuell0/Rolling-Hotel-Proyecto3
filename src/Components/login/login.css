@@ -1,25 +1,26 @@
-
+.body-login{
+    background-color: #004069;
+}
 *{
     font-family: 'Jost', sans-serif;
 }
-.h11{
-    color: red;
-}
 
-.Imagen-Registro-Logo{
-    width: 80%;
-    height: 100%;
+
+.Imagen-Login-Logo{
+    width: 40%;
+    padding-left: 200px;
+    border-radius: 15px;
 }
-.div-padre-formulario{
-    background-color: #00304E;
+.div-padre-formulario-login{
+    background-color: #004069;
     width: 100%;
     height: 100%;
 }
-.titulo-registro{
+.titulo-login{
     color: white;
 }
 .input-registro{
-    background-color: #00304E;
+    background-color: #004069;
     border: 4px solid #D9D9D9;
     border-radius: 50px;
     width: 500px;
@@ -31,7 +32,7 @@ label{
 }
 .btn-registrarse{
     background-color: #D9D9D9;
-    color: #00304E;
+    color: #004069;
     border-radius: 50px;
     font-size: x-large;
     width: 100%;
@@ -40,3 +41,63 @@ label{
 .p-login{
     color: white;
 }
+@media (max-width:568px){
+    .padre-login{
+        display: flex;
+        flex-direction: column;
+    }
+    .input-registro{
+        background-color: #004069;
+        border: 4px solid #D9D9D9;
+        border-radius: 50px;
+        width: 250px;
+        height: 45px;
+    }
+    .Imagen-Login-Logo{
+        display: none;
+    }
+}
+@media (max-width:1366px){
+    .Imagen-Login-Logo{
+        width: 42%;
+        padding-left: 100px;
+        border-radius: 15px;
+    }
+    }
+
+
+
+    @media (max-width:992px){
+        .Imagen-Login-Logo{
+            width: 45%;
+            padding-left: 10px;
+            border-radius: 15px;
+        }
+    .div-padre-formulario{
+        background-color: #004069;
+        width: 100%;
+        height: 100%;
+    }}
+
+    @media (max-width:936px){
+        .Imagen-Login-Logo{
+            width: 40%;
+            padding-left: 10px;
+            border-radius: 15px;
+        }
+        .div-padre-formulario{
+        background-color: #004069;
+        width: 100%;
+        height: 100%;
+    }
+    }
+    
+    @media (max-width:885px){
+        .Imagen-Login-Logo{
+        display: none;
+        }
+        .div-padre-formulario{
+            background-color: #004069;
+            width: 100%;
+            height: 100%;
+        }}

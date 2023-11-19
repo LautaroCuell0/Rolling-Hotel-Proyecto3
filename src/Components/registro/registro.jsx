@@ -6,14 +6,8 @@ import { Form } from "react-bootstrap"
 
 
 function Registro() {
-    const values = [true,];
-    const [fullscreen, setFullscreen] = useState(true);
-    const [show, setShow] = useState(false);
 
-    function handleShow(breakpoint) {
-    setFullscreen(breakpoint);
-    setShow(true);
-    }
+
 const formInicial = {
     id: null,
     name:'',
@@ -26,21 +20,9 @@ const handleInpitChange = (event) =>{
 }
     return (
     <>
-    {values.map((v, idx) => (
-        <Button key={idx} className="me-2 mb-2" onClick={() => handleShow(v)}>
-            Full screen
-        {typeof v === 'string' && `below ${v.split('-')[0]}`}
-        </Button>
-    ))}
-    <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
-        <Modal.Header closeButton>
-        <Modal.Title>
-
-        </Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='p-0 d-flex '>
-            <div className='d-flex container-fluid p-0'>  
-                <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Registro-Logo' />
+    <body className='body-registro'>
+            <div className='d-flex container-fluid p-0 padre-registro py-3'>  
+                <img src=".//src/assets/ImagenDelRegistro.png" className='Imagen-Registro-Logo ' />
                 <div className='div-padre-formulario d-flex justify-content-center '>
                     <Form action="" 
                     onSubmit={event=>{
@@ -48,7 +30,7 @@ const handleInpitChange = (event) =>{
                         props.addUser(usuario)
                         setUsuario(formInicial)
                     }} 
-                    className='d-flex justify-content-center align-items-center'>
+                    className='d-flex justify-content-center align-items-center '>
                         <div className='d-flex flex-column'>
                         <h2 className='titulo-registro mb-5'>
                             Registrate:
@@ -58,6 +40,7 @@ const handleInpitChange = (event) =>{
                         type="text" 
                         name='nombre' 
                         id='nombre'
+                        required
                         // value={usuario.name}
                         className='input-registro my-2'
                         onChange={handleInpitChange}
@@ -67,6 +50,7 @@ const handleInpitChange = (event) =>{
                         type="email"
                         name='email'
                         id='email'
+                        required
                         // value={usuario.email}
                         className='input-registro my-2'
                         onChange={handleInpitChange}
@@ -78,6 +62,7 @@ const handleInpitChange = (event) =>{
                         id='password'
                         className='input-registro my-2'
                         onChange={handleInpitChange}
+                        required
                         />
                         <label htmlFor="">Confirmar contraseña:</label>
                         <input 
@@ -86,14 +71,14 @@ const handleInpitChange = (event) =>{
                         id='repassword'
                         className='input-registro my-2'
                         onChange={handleInpitChange}
+                        required
                         />
                         <button type='sumbit' className='btn-registrarse p-2 mt-5'>Registrarse</button>
                         </div>
                     </Form>
                 </div>
-            </div>      
-        </Modal.Body>
-        </Modal>
+            </div>  
+    </body>    
     </>
     );
 }
