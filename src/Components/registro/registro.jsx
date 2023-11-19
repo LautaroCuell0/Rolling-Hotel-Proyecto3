@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import "./registro.css";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { Form } from "react-bootstrap";
+import appConfig from "../../../endPoints";
 
 function Registro() {
   const formInicial = {
     username: "",
     email: "",
     password: "",
+    repassword: "",
   };
   const [usuario, setUsuario] = useState(formInicial);
   //agregado
@@ -19,19 +19,30 @@ function Registro() {
     const { name, value } = event.target;
     setUsuario({ ...usuario, [name]: value });
   };
+  const validarPassword = () => {
+    return usuario.password === usuario.repassword;
+  };
   //agregado
   const handleSubmit = async (event) => {
     event.preventDefault();
+    // Validar que las contraseñas coincidan
+    if (!validarPassword()) {
+      setError("Las contraseñas no coinciden");
+      return;
+    }
     try {
-      const response = await fetch("http://localhost:4000/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(usuario),
-      });
-
-      if (response.ok) {
+      const response = await fetch(
+        appConfig.API_BASE_URL + appConfig.REGISTER,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(usuario),
+        }
+      );
+      console.log(response);
+      if (response.status == 200) {
         setMensaje("Usuario registrado exitosamente");
         setUsuario(formInicial);
         setError("");
@@ -69,7 +80,7 @@ function Registro() {
                   name="username"
                   id="nombre"
                   required
-                  // value={usuario.name}
+                  value={usuario.username}
                   className="input-registro my-2"
                   onChange={handleInpitChange}
                 />
@@ -79,7 +90,7 @@ function Registro() {
                   name="email"
                   id="email"
                   required
-                  // value={usuario.email}
+                  value={usuario.email}
                   className="input-registro my-2"
                   onChange={handleInpitChange}
                 />
@@ -88,6 +99,7 @@ function Registro() {
                   type="password"
                   name="password"
                   id="password"
+                  value={usuario.password}
                   className="input-registro my-2"
                   onChange={handleInpitChange}
                   required
@@ -97,6 +109,7 @@ function Registro() {
                   type="password"
                   name="repassword"
                   id="repassword"
+                  value={usuario.repassword}
                   className="input-registro my-2"
                   onChange={handleInpitChange}
                   required
