@@ -27,7 +27,7 @@ function CardHab(){
         // opcion === 0 ? //if
         <>
         <div className="cover-cover-cards-hab">
-            <div className="h2-cards-hab"><h2>SELECCIONA TU HABITACIONES</h2></div>
+            <div className="h2-cards-hab"><h2>SELECCIONA TU HABITACION</h2></div>
         <div className="cover-cards-hab">
 
         <div className="card-hab">
@@ -50,7 +50,7 @@ function CardHab(){
             <img src="https://www.cataloniahotels.com/es/blog/wp-content/uploads/2016/05/habitaci%C3%B3n-doble-catalonia-620x412.jpg" alt="" />
         </div>
         <div className="button-hab">
-            <button>VER</button>
+        <Link to={'./Habitaciones-inicio'}><button>VER</button></Link>
         </div>
         </div>
 
@@ -63,7 +63,7 @@ function CardHab(){
             <img src="https://www.hoteloceanic.fr/wp-content/uploads/sites/46/2022/09/20220913_112700-1-800x600.jpg" alt="" />
         </div>
         <div className="button-hab">
-            <button>VER</button>
+        <Link to={'./Habitaciones-inicio'}><button>VER</button></Link>
         </div>
         </div>
 
