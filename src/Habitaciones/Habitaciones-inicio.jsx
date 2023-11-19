@@ -24,7 +24,7 @@ function HabitacionesInicio(){
             <div className="cardOfert-habitacion">
                  <img src='https://www.hotelmedici.com/images/stories/camere/singola_1200/singola_1_1200.jpg' alt="" />
                  <div className="info-ofertCard">
-                    <h2>HABITACION SIMPLE</h2>
+                    <h2>HABITACION SIMPLE 1</h2>
                     <ul>
                         <li>CAMA INDIVIDUAL</li>
                         <li>MANTENIMIENTO DIARIO</li>
