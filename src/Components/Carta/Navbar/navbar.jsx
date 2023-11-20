@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 
 import "./navbar.css";
 function NavbarMain() {
+  let loginSuccess = false;
   return (
     <div className="cover-nav">
       <Navbar expand="lg" className="back-navbar" data-bs-theme="dark">

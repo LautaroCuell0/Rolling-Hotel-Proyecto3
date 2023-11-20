@@ -46,7 +46,10 @@ function App() {
           />
           <Route path="/Galeria" element={<Galeria />} />
           <Route path="/Contacto" element={<Contacto />} />
-          <Route path="/Habitaciones-inicio" element={<HabitacionesInicio />} />
+          <Route
+            path="/Habitaciones-inicio/:tipoHabitacion"
+            element={<HabitacionesInicio />}
+          />
           <Route path="/detalle-hab" element={<DetalleHab />} />
           <Route path="/crudUsers" element={<UserList />} />
           <Route path="/CrudHab" element={<CrudHab />} />
