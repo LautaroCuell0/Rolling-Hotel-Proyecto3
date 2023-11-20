@@ -1,20 +1,22 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import { useState, useEffect } from "react";
 
-import './navbar.css'
-
+import "./navbar.css";
 function NavbarMain() {
-
-
-
   return (
-
-    <div className='cover-nav'>
+    <div className="cover-nav">
       <Navbar expand="lg" className="back-navbar" data-bs-theme="dark">
-        <Container className='contenido'>
-          <Navbar.Brand href="/"><img className='img-logo' src=".//public/imgs/main-logo.jpeg" alt="" /></Navbar.Brand>
+        <Container className="contenido">
+          <Navbar.Brand href="/">
+            <img
+              className="img-logo"
+              src=".//public/imgs/main-logo.jpeg"
+              alt=""
+            />
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
@@ -31,22 +33,26 @@ function NavbarMain() {
               </NavDropdown> */}
               <Nav.Link href="/Habitaciones-inicio">HABITACIONES</Nav.Link>
               <Nav.Link href="/Galeria">GALERIA</Nav.Link>
-              <Nav.Link href="/login">LOGIN</Nav.Link>
-              <Nav.Link href="/registro">REGISTRO</Nav.Link>
-              <Nav.Link href='/SobreNosotros' >SOBRE NOSOTROS</Nav.Link>
+              <Nav.Link href="/login">
+                {loginSuccess ? "PERFIL" : "INICIAR SESION"}
+              </Nav.Link>
+              {!loginSuccess && <Nav.Link href="/registro"> REGISTRO</Nav.Link>}
+              <Nav.Link href="/SobreNosotros">SOBRE NOSOTROS</Nav.Link>
               <NavDropdown title="⚙" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/crudUsers">Administrador de usuarios</NavDropdown.Item>
-                <NavDropdown.Item href="/crudHab">Administrador de habitaciones</NavDropdown.Item>
+                <NavDropdown.Item href="/crudUsers">
+                  Administrador de usuarios
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/crudHab">
+                  Administrador de habitaciones
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Reservas</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
     </div>
   );
-
 }
 
 export default NavbarMain;
