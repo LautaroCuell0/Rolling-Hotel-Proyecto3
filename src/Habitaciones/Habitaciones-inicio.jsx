@@ -10,7 +10,7 @@ function HabitacionesInicio(){
         <section className="habitacion-seccion">
         <div>
             <div className="ofertas-hab">
-                <div className="h1-ofertas"><h1>DESCUBRE NUESTRAS HABITACIONE</h1></div>
+                <div className="h1-ofertas"><h1>DESCUBRE NUESTRAS HABITACIONES</h1></div>
                 <section className="carrousel-oferts">
                      <img src="https://hotelvilaramerica.com/images/Habitacion-Hotel-3-Estrellas.jpg" alt="" />
                      <img src="https://media.ambito.com/p/0c5616e28bf58d0403a76b5cc372f420/adjuntos/239/imagenes/036/681/0036681201/1200x675/smart/2jpg.jpg" alt="" />
