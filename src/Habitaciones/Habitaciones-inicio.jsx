@@ -55,6 +55,7 @@ function HabitacionesInicio() {
                                         <li>{habitacion.descripcion1}</li>
                                         <li>{habitacion.descripcion2}</li>
                                         <li>{habitacion.descripcion3}</li>
+                                        <li>precio: {habitacion.precio}</li>
                                     </ul>
                                     <Link to={'/detalle-hab'}><button>VER MAS</button></Link>
                                 </div>
