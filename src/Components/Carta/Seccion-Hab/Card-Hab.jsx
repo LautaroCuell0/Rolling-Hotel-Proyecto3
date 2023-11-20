@@ -38,7 +38,7 @@ function CardHab(){
             <img src="https://www.derbyhotels.com/files/img/img_s/as-single-4-782.jpg" alt="" />
         </div>
         <div className="button-hab">
-            <Link to={'./Habitaciones-inicio'}><button>VER</button></Link>
+            <Link to={'./Habitaciones-inicio/1'}><button>VER</button></Link>
         </div>
         </div>
 
@@ -50,7 +50,7 @@ function CardHab(){
             <img src="https://www.cataloniahotels.com/es/blog/wp-content/uploads/2016/05/habitaci%C3%B3n-doble-catalonia-620x412.jpg" alt="" />
         </div>
         <div className="button-hab">
-        <Link to={'./Habitaciones-inicio'}><button>VER</button></Link>
+        <Link to={'./Habitaciones-inicio/2'}><button>VER</button></Link>
         </div>
         </div>
 
@@ -63,7 +63,7 @@ function CardHab(){
             <img src="https://www.hoteloceanic.fr/wp-content/uploads/sites/46/2022/09/20220913_112700-1-800x600.jpg" alt="" />
         </div>
         <div className="button-hab">
-        <Link to={'./Habitaciones-inicio'}><button>VER</button></Link>
+        <Link to={'./Habitaciones-inicio/3'}><button>VER</button></Link>
         </div>
         </div>
 
