@@ -13,7 +13,7 @@ function Footer (){
                     <ul>
                         <a href="/"><li>INICIO</li></a>
                         <a href="./SobreNosotros"><li>SOBRE NOSOTROS</li></a>
-                        <li>LOGIN</li>
+                        <a href="./login"><li>LOGIN</li></a>
                     </ul>
                 </div>
             </div>

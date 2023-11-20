@@ -124,7 +124,7 @@
     .cardOfert-habitacion{
         display: flex;
         flex-direction: column;
-        height: 450px;
+        height: 500px;
         width: 350px;
     }
     .info-ofertCard{
