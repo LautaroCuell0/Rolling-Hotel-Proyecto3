@@ -3,10 +3,41 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useState, useEffect } from "react";
-
 import "./navbar.css";
+
 function NavbarMain() {
-  let loginSuccess = false;
+  const [loginSuccess, setLoginSuccess] = useState(false);
+
+  function verificarTokenYCambiarEstado() {
+    const cookies = document.cookie;
+    const cookiesArray = cookies.split(";");
+    // Buscar el valor de "token" en las cookies
+    let tokenValue = null;
+    for (let i = 0; i < cookiesArray.length; i++) {
+      const cookie = cookiesArray[i].trim();
+      if (cookie.startsWith("token=")) {
+        tokenValue = cookie.substring(6); // Longitud de "token="
+        break;
+      }
+    }
+    if (tokenValue) {
+      console.log('Valor de "token" encontrado:', tokenValue);
+    } else {
+      console.log('Valor de "token" no encontrado');
+      // Puedes manejar la lógica si el valor no se encuentra
+    }
+    return tokenValue;
+  }
+
+  // Llamada a la función para verificar el valor de "token" y cambiar el estado
+  useEffect(() => {
+    // Verificar el token al cargar el componente
+    const tokenValue = verificarTokenYCambiarEstado();
+    if (tokenValue) {
+      setLoginSuccess(true);
+    }
+  }, [loginSuccess]);
+
   return (
     <div className="cover-nav">
       <Navbar expand="lg" className="back-navbar" data-bs-theme="dark">
@@ -23,21 +54,22 @@ function NavbarMain() {
             <Nav className="me-auto">
               <Nav.Link href="/">INICIO</Nav.Link>
               {/* <NavDropdown title="HABITACIONES" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Habitacion simple</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Habitacion doble
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Habitacion triple
-                </NavDropdown.Item>
-
-              </NavDropdown> */}
+                  <NavDropdown.Item href="#action/3.1">Habitacion simple</NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    Habitacion doble
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="#action/3.2">
+                    Habitacion triple
+                  </NavDropdown.Item>
+  
+                </NavDropdown> */}
               <Nav.Link href="/Habitaciones-inicio">HABITACIONES</Nav.Link>
               <Nav.Link href="/Galeria">GALERIA</Nav.Link>
-              <Nav.Link href="/login">
-                {loginSuccess ? "PERFIL" : "INICIAR SESION"}
-              </Nav.Link>
-              {!loginSuccess && <Nav.Link href="/registro"> REGISTRO</Nav.Link>}
+              {loginSuccess ? (
+                <Nav.Link href="/profile">PERFIL</Nav.Link>
+              ) : (
+                <Nav.Link href="/login">INICIAR SESION</Nav.Link>
+              )}
               <Nav.Link href="/SobreNosotros">SOBRE NOSOTROS</Nav.Link>
               <NavDropdown title="⚙" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/crudUsers">

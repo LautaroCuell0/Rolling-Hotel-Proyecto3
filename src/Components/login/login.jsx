@@ -7,8 +7,8 @@ export function Login() {
   const [nombre, setNombre] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [error, setError] = useState(false);
-  //estado para dar el ok del login
   const [loginSuccess, setLoginSuccess] = useState(false);
+  //estado para dar el ok del login
   const redirigir = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -35,12 +35,12 @@ export function Login() {
 
         console.log("Inicio de sesión exitoso");
         console.log(response.headers);
-        setLoginSuccess(true);
         // guardar el token que traigo desde el back con el objeto para guardarlo en una cookie y como es el objeto completo uso token.token para recibir ese valor
         const { token } = await response.json();
 
         // Guardar el token en las cookies o en el lugar que prefieras
         document.cookie = `token=${token.token}; path=/`;
+        setLoginSuccess(true);
         setTimeout(() => {
           redirigir("/");
         }, 3000);
