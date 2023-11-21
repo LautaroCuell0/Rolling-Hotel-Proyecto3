@@ -187,8 +187,8 @@ const CrudHab = () => {
         <table className="table">
           <thead>
             <tr>
+              <th>Titulo</th>
               <th>Imagen</th>
-              <th>Título</th>
               <th>Descripción 1</th>
               <th>Descripción 2</th>
               <th>Descripción 3</th>

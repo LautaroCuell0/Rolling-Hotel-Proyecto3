@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./registro.css";
 import { Form } from "react-bootstrap";
 import appConfig from "../../../endPoints";
+import { useNavigate } from "react-router-dom";
 
 function Registro() {
   const formInicial = {
@@ -41,11 +42,11 @@ function Registro() {
           body: JSON.stringify(usuario),
         }
       );
-      console.log(response);
       if (response.status == 200) {
-        setMensaje("Usuario registrado exitosamente");
+        setMensaje("Te registraste exitosamente, ahora inicia sesion");
         setUsuario(formInicial);
         setError("");
+        alert(mensaje);
       } else {
         const data = await response.json();
         setError(data.message || "Error al registrar usuario");
@@ -81,7 +82,7 @@ function Registro() {
                   id="nombre"
                   required
                   value={usuario.username}
-                  className="input-registro my-2"
+                  className="input-registro my-2 p-2 text-white"
                   onChange={handleInpitChange}
                 />
                 <label htmlFor="">Email:</label>
@@ -91,7 +92,7 @@ function Registro() {
                   id="email"
                   required
                   value={usuario.email}
-                  className="input-registro my-2"
+                  className="input-registro my-2 p-2 text-white"
                   onChange={handleInpitChange}
                 />
                 <label htmlFor="">Contraseña:</label>
@@ -100,7 +101,7 @@ function Registro() {
                   name="password"
                   id="password"
                   value={usuario.password}
-                  className="input-registro my-2"
+                  className="input-registro my-2 p-2 text-white"
                   onChange={handleInpitChange}
                   required
                 />
@@ -110,7 +111,7 @@ function Registro() {
                   name="repassword"
                   id="repassword"
                   value={usuario.repassword}
-                  className="input-registro my-2"
+                  className="input-registro my-2 p-2 text-white"
                   onChange={handleInpitChange}
                   required
                 />

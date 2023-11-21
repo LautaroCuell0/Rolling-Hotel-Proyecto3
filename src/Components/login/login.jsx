@@ -30,23 +30,24 @@ export function Login() {
         }),
       });
 
-      if (response.ok) {
+      if (response.status == 200) {
         // La autenticación fue exitosa, puedes redirigir al usuario a otra página.
 
         console.log("Inicio de sesión exitoso");
-        console.log(response.headers);
         // guardar el token que traigo desde el back con el objeto para guardarlo en una cookie y como es el objeto completo uso token.token para recibir ese valor
-        const { token } = await response.json();
+        const { token, rol } = await response.json();
 
         // Guardar el token en las cookies o en el lugar que prefieras
         document.cookie = `token=${token.token}; path=/`;
+        document.cookie = `rol=${String(rol)}; path=/`;
         setLoginSuccess(true);
+        alert("Iniciaste sesion correctamente");
         setTimeout(() => {
           redirigir("/");
         }, 3000);
       } else {
         // La autenticación falló, puedes manejar el error según la respuesta del servidor.
-        console.log("Inicio de sesión fallido");
+        alert("Inicio de sesión fallido");
       }
     } catch (error) {
       console.error("Error al enviar la solicitud:", error);
