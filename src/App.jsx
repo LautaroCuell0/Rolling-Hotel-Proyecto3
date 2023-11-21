@@ -19,6 +19,7 @@ import Registro from "./Components/registro/registro";
 import CrudHab from "./Admin/CrudHab";
 import Error404 from "./Components/error404/error";
 import MyCalendario from "./Calendario/calendario";
+import Reserva from "./Admin/CrudReserva";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           <Route path="/detalle-hab" element={<DetalleHab />} />
           <Route path="/crudUsers" element={<UserList />} />
           <Route path="/CrudHab" element={<CrudHab />} />
+          <Route path="/CrudReserva" element={<Reserva />} />
           <Route path="/calendario" element={<MyCalendario />} />
           <Route path="*" element={<Error404 />} />
         </Routes>
