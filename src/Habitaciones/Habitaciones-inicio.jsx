@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import appConfig from "../../endPoints";
 
 function HabitacionesInicio() {
-  const urlbase = "http://localhost:4000/api";
   const parametroHabitacion = useParams();
   const [habitacionData, sethabitacionData] = useState([]);
   useEffect(() => {
@@ -15,7 +15,7 @@ function HabitacionesInicio() {
       try {
         const { data } = await axios({
           method: "get",
-          url: "http://localhost:4000/api/habitaciones",
+          url: appConfig.API_BASE_URL + appConfig.HABITACIONES,
           params: {
             tipo: parametroHabitacion.tipoHabitacion,
           },
