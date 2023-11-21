@@ -61,6 +61,16 @@ function NavbarMain() {
     }
   }, [loginSuccess]);
 
+  function borrarCookie(nombre) {
+    // Establece la fecha de expiración en el pasado
+    document.cookie = `${nombre}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+  }
+  const deslog = () => {
+    alert("cerraste sesion");
+    borrarCookie("token");
+    borrarCookie("rol");
+    setLoginSuccess(false);
+  };
   return (
     <div className="cover-nav">
       <Navbar expand="lg" className="back-navbar" data-bs-theme="dark">
@@ -89,7 +99,14 @@ function NavbarMain() {
               <Nav.Link href="/Habitaciones-inicio">HABITACIONES</Nav.Link>
               <Nav.Link href="/Galeria">GALERIA</Nav.Link>
               {loginSuccess ? (
-                <Nav.Link href="/logout">CERRAR SESION</Nav.Link>
+                <Nav.Link
+                  onClick={() => {
+                    deslog();
+                  }}
+                  href=""
+                >
+                  CERRAR SESION
+                </Nav.Link>
               ) : (
                 <Nav.Link href="/login">INICIAR SESION</Nav.Link>
               )}
