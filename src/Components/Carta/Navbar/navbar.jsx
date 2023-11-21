@@ -37,7 +37,7 @@ function NavbarMain() {
               <NavDropdown title="⚙" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/crudUsers">Administrador de usuarios</NavDropdown.Item>
                 <NavDropdown.Item href="/crudHab">Administrador de habitaciones</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Reservas</NavDropdown.Item>
+                <NavDropdown.Item href="/CrudReserva">Reservas</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
