@@ -7,6 +7,7 @@ import "./navbar.css";
 
 function NavbarMain() {
   const [loginSuccess, setLoginSuccess] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   function verificarTokenYCambiarEstado() {
     const cookies = document.cookie;
@@ -20,12 +21,6 @@ function NavbarMain() {
         break;
       }
     }
-    if (tokenValue) {
-      console.log('Valor de "token" encontrado:', tokenValue);
-    } else {
-      console.log('Valor de "token" no encontrado');
-      // Puedes manejar la lógica si el valor no se encuentra
-    }
     return tokenValue;
   }
 
@@ -38,6 +33,44 @@ function NavbarMain() {
     }
   }, [loginSuccess]);
 
+  function verificarAdmin() {
+    const cookies = document.cookie;
+    const cookiesArray = cookies.split(";");
+    // Buscar el valor de "token" en las cookies
+    let userValue = null;
+    for (let i = 0; i < cookiesArray.length; i++) {
+      const cookie = cookiesArray[i].trim();
+      if (cookie.startsWith("rol=")) {
+        userValue = cookie.substring(4); // Longitud de "user="
+        break;
+      }
+    }
+    return userValue;
+  }
+
+  // Llamada a la función para verificar el valor de "token" y cambiar el estado
+  useEffect(() => {
+    // Verificar el token al cargar el componente
+    const tokenValue = verificarTokenYCambiarEstado();
+    const userValue = verificarAdmin();
+    if (tokenValue) {
+      setLoginSuccess(true);
+    }
+    if (userValue == "admin") {
+      setIsAdmin(true);
+    }
+  }, [loginSuccess]);
+
+  function borrarCookie(nombre) {
+    // Establece la fecha de expiración en el pasado
+    document.cookie = `${nombre}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+  }
+  const deslog = () => {
+    alert("cerraste sesion");
+    borrarCookie("token");
+    borrarCookie("rol");
+    setLoginSuccess(false);
+  };
   return (
     <div className="cover-nav">
       <Navbar expand="lg" className="back-navbar" data-bs-theme="dark">
@@ -66,22 +99,38 @@ function NavbarMain() {
               <Nav.Link href="/Habitaciones-inicio">HABITACIONES</Nav.Link>
               <Nav.Link href="/Galeria">GALERIA</Nav.Link>
               {loginSuccess ? (
-                <Nav.Link href="/logout">CERRAR SESION</Nav.Link>
+                <Nav.Link
+                  onClick={() => {
+                    deslog();
+                  }}
+                  href=""
+                >
+                  CERRAR SESION
+                </Nav.Link>
               ) : (
                 <Nav.Link href="/login">INICIAR SESION</Nav.Link>
               )}
+              {loginSuccess ? (
+                ""
+              ) : (
+                <Nav.Link href="/registro">REGISTRARSE</Nav.Link>
+              )}
               <Nav.Link href="/SobreNosotros">SOBRE NOSOTROS</Nav.Link>
-              <NavDropdown title="⚙" id="basic-nav-dropdown">
-                <NavDropdown.Item href="/crudUsers">
-                  Administrador de usuarios
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/crudHab">
-                  Administrador de habitaciones
-                </NavDropdown.Item>
-                <NavDropdown.Item href="/CrudReserva">
-                  Reservas
-                </NavDropdown.Item>
-              </NavDropdown>
+              {isAdmin ? (
+                <NavDropdown title="⚙" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="/crudUsers">
+                    Administrador de usuarios
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/crudHab">
+                    Administrador de habitaciones
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/CrudReserva">
+                    Reservas
+                  </NavDropdown.Item>
+                </NavDropdown>
+              ) : (
+                ""
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>
