@@ -66,7 +66,7 @@ function NavbarMain() {
               <Nav.Link href="/Habitaciones-inicio">HABITACIONES</Nav.Link>
               <Nav.Link href="/Galeria">GALERIA</Nav.Link>
               {loginSuccess ? (
-                <Nav.Link href="/profile">PERFIL</Nav.Link>
+                <Nav.Link href="/logout">CERRAR SESION</Nav.Link>
               ) : (
                 <Nav.Link href="/login">INICIAR SESION</Nav.Link>
               )}
