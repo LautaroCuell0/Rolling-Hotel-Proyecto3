@@ -74,7 +74,6 @@ function HabitacionesInicio() {
           ))}
         </div>
       </section>
-      <button>RESERVAR YA!</button>
     </>
   );
 }
