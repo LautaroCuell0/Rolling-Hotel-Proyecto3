@@ -3,10 +3,13 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
- function MyCalendario() {
+ function MyCalendario({setDate}) {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DatePicker />
+      <DatePicker  
+        disablePast
+        onChange={(newValue)=>setDate(newValue)}
+      />
     </LocalizationProvider>
   );
 }

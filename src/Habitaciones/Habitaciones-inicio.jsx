@@ -65,7 +65,7 @@ function HabitacionesInicio() {
                     <li>{habitacion.descripcion3}</li>
                     <li>precio: {habitacion.precio}</li>
                   </ul>
-                  <Link to={"/detalle-hab"}>
+                  <Link to={`/detalle-hab/${habitacion._id}`}>
                     <button>VER MAS</button>
                   </Link>
                 </div>
