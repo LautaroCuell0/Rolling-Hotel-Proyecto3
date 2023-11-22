@@ -41,7 +41,7 @@ function App() {
                   <Carta />
                 </div>
                 <CardHab />
-                <Carrusel data={slides} />
+                {/* <Carrusel data={slides} /> */}
                 <Servicios />
               </>
             }
