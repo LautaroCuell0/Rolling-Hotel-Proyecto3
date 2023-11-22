@@ -78,7 +78,7 @@ function NavbarMain() {
           <Navbar.Brand href="/">
             <img
               className="img-logo"
-              src=".//public/imgs/main-logo.jpeg"
+              src="https://pbs.twimg.com/media/F_jKF07WkAEc7zs?format=jpg&name=900x900"
               alt=""
             />
           </Navbar.Brand>

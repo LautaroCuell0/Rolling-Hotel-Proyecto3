@@ -8,7 +8,7 @@ function Footer (){
         <div className="back-footer">
         <div className="cover-footer">
             <div className="footer-hotel">
-                <img src=".//public/imgs/main-logo.jpeg" alt="" />
+                <img src="https://pbs.twimg.com/media/F_jKF07WkAEc7zs?format=jpg&name=900x900" alt="" />
                 <div className="list-footer">
                     <ul>
                         <a href="/"><li>INICIO</li></a>
