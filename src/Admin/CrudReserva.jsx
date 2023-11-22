@@ -4,15 +4,15 @@ import './CrudReserva.css';
 function Reserva(){
     const [todoArray, setTodoArray] = useState([
         {
-            FechaEntrada: 'nayeli',
-            FechaSalida: 'nayeli1@gmail.com',
+            FechaEntrada: '12 NOVIEMBRE',
+            FechaSalida: '14 NOVIEMBRE',
             id: 1,
             Usuario: 'juan111',
             Habitacion: 'Habitacion simple 11232'
         },
         {
-            FechaEntrada: 'santi',
-            FechaSalida: 'santi1@gmail.com',
+            FechaEntrada: '17 NOVIEMBRE',
+            FechaSalida: '24 NOVIEMBRE',
             id: 2,
             Usuario: 'juan222',
             Habitacion: 'Habitacion doble 11233'
