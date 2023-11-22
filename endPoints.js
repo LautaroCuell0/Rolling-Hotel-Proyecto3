@@ -4,6 +4,7 @@ const appConfig = {
   LOGIN: "/login",
   LOGOUT: "/logout",
   HABITACIONES: "/habitaciones",
+  RESERVAS: "/reservas",
 };
 
 export default appConfig;
