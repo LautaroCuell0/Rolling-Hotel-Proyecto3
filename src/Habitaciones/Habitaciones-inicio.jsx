@@ -51,7 +51,7 @@ function HabitacionesInicio() {
                 alt=""
               />
             </section>
-            <button>CONTACTANOS!</button>
+            <a href="https://wa.me/987654321?text=Quiero%20realizar%20un%20proyecto%20web%20php" target="_blank"><button>CONTACTANOS AL TELEFONO</button></a>
           </div>
           {habitacionData.map((habitacion) => (
             <div key={habitacion._id} className="cover-ofert">
