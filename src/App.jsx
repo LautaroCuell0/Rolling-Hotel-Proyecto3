@@ -52,7 +52,7 @@ function App() {
             path="/Habitaciones-inicio/:tipoHabitacion"
             element={<HabitacionesInicio />}
           />
-          <Route path="/detalle-hab" element={<DetalleHab />} />
+          <Route path="/detalle-hab/:idHabitacion" element={<DetalleHab />} />
           <Route path="/crudUsers" element={<UserList />} />
           <Route path="/CrudHab" element={<CrudHab />} />
           <Route path="/CrudReserva" element={<Reserva />} />
