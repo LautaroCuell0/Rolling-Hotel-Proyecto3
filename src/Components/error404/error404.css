@@ -16,11 +16,33 @@
     width: 250px;
     height: 70px;
     border-radius: 50px;
-    color: white;
+    color: 00304E;
     font-size: x-large;
     margin-top: 10%;
 }
 .boton-error:hover{
-    background-color: white;
-    color: #00304E;
+    background-color: #00304E;
+    color: white;
+}
+
+@media (max-width:568px){
+    .div-padre-error{
+        display: flex;
+        flex-direction: column;
+    }
+    .titulo-error{
+        font-size: 450%;
+    }
+    .img-error{
+        width: 65%;
+    }
+}
+
+@media (max-width:768px){
+    .titulo-error{
+        font-size: 650%;
+    }
+    .img-error{
+        width: 45%;
+    }
 }

@@ -6,17 +6,17 @@ import appConfig from "../../../endPoints";
 export function Login() {
   const [nombre, setNombre] = useState("");
   const [contraseña, setContraseña] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false);
   //estado para dar el ok del login
   const redirigir = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (nombre === "" || contraseña === "") {
-      setError(true);
-      return;
-    }
+    // if (nombre === "" || contraseña === "") {
+    //   setError(true);
+    //   return;
+    // }
 
     try {
       const response = await fetch(appConfig.API_BASE_URL + appConfig.LOGIN, {
@@ -47,10 +47,11 @@ export function Login() {
         }, 3000);
       } else {
         // La autenticación falló, puedes manejar el error según la respuesta del servidor.
-        alert("Inicio de sesión fallido");
+        setError("Eror al iniciar sesion")
       }
     } catch (error) {
       console.error("Error al enviar la solicitud:", error);
+      setError("Error de red");
     }
   };
 
@@ -88,14 +89,10 @@ export function Login() {
                 {loginSuccess && (
                   <p className="p-login m-2"> Redirigiendo...</p>
                 )}
+                {error && <p style={{ color: "red" }}>Error al iniciar sesion.</p>}
                 <button type="submit" className="btn-registrarse my-2">
                   {loginSuccess ? "Sesión Iniciada" : "Iniciar Sesión"}
                 </button>
-                {error && (
-                  <p className="p-login my-2">
-                    Todos los campos son obligatorios.
-                  </p>
-                )}
               </div>
             </form>
           </div>

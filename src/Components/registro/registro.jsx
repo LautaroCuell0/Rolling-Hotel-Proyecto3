@@ -115,7 +115,8 @@ function Registro() {
                   onChange={handleInpitChange}
                   required
                 />
-                <button type="sumbit" className="btn-registrarse p-2 mt-5">
+                {error && <p style={{ color: "red" }}>Error al intentar registrarse.</p>}
+                <button type="sumbit" className="btn-registrarse p-2 mt-3">
                   Registrarse
                 </button>
               </div>
