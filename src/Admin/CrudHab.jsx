@@ -4,6 +4,8 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import appConfig from "../../endPoints";
+import Table from 'react-bootstrap/Table';
+
 
 const CrudHab = () => {
   const urlBase = appConfig.API_BASE_URL + appConfig.HABITACIONES;
@@ -109,7 +111,7 @@ const CrudHab = () => {
           <Modal.Title>Editar</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <form action="">
+           <form action="">
             <input
               className="form-control"
               name="titulo"
@@ -166,7 +168,7 @@ const CrudHab = () => {
               placeholder="Tipo"
               required
             />
-          </form>
+          </form> 
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -184,29 +186,32 @@ const CrudHab = () => {
         </Modal.Footer>
       </Modal>
       <div>
-        <h2>Elementos Agregados</h2>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Titulo</th>
-              <th>Imagen</th>
-              <th>Descripción 1</th>
-              <th>Descripción 2</th>
-              <th>Descripción 3</th>
-              <th>Precio</th>
-              <th>Tipo</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-          {habitacionesData && habitacionesData.length > 0 ? (
+        <div className="cover-titulo">
+        <h2 className="titulo-reserva">Elementos Agregados</h2>
+        </div>
+          <Table striped bordered hover>
+      <thead>
+        <tr>
+          <th>Titulo</th>
+          <th className="imagen-reserva">Imagen</th> 
+          <th className="descripcion1">Descripción 1</th>
+          <th className="descripcion2">Descripción 2</th>
+          <th className="descripcion3">Descripción 3</th>
+          <th>Precio</th>
+          <th>Tipo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      
+      {habitacionesData && habitacionesData.length > 0 ? (
               habitacionesData.map((hab) => (
                 <tr key={hab._id}>
                   <td>{hab.titulo}</td>
-                  <td>{hab.imagen1}</td>
-                  <td>{hab.descripcion1}</td>
-                  <td>{hab.descripcion2}</td>
-                  <td>{hab.descripcion3}</td>
+                  <td className="imagen-reserva" style={{ maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{hab.imagen1}</td>
+                  <td className="descripcion1">{hab.descripcion1}</td>
+                  <td className="descripcion2">{hab.descripcion2}</td>
+                  <td className="descripcion3">{hab.descripcion3}</td>
                   <td>{hab.precio}</td>
                   <td>{hab.tipo}</td>
                   <td>
@@ -227,8 +232,8 @@ const CrudHab = () => {
                 <td colSpan="8">No hay habitaciones disponibles</td>
               </tr>
             )}
-          </tbody>
-        </table>
+      </tbody>
+    </Table>
       </div>
 
       <div className="container-2">
@@ -290,7 +295,7 @@ const CrudHab = () => {
               placeholder="Tipo"
               required
             />
-            <button type="submit" htmlFor="formHabitaciones">
+            <button type="submit" htmlFor="formHabitaciones" className="boton-hab">
               Agregar
             </button>
           </form>

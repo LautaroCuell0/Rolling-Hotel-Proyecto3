@@ -85,3 +85,26 @@
 .total-info span{
     color: #00304E;
 }
+.cover-titulo{
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1115px) {
+    .nombreyapellido{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .email{
+        display: none;
+    }   
+}
+
+@media screen and (max-width: 750px) {
+    .habitacion{
+        display: none;
+    }
+}
+
