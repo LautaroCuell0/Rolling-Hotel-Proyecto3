@@ -1,149 +1,176 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './CrudReserva.css';
+import axios from "axios";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import appConfig from "../../endPoints";
 
-function Reserva(){
-    const [todoArray, setTodoArray] = useState([
-        {
-            FechaEntrada: '12 NOVIEMBRE',
-            FechaSalida: '14 NOVIEMBRE',
-            id: 1,
-            Usuario: 'juan111',
-            Habitacion: 'Habitacion simple 11232'
-        },
-        {
-            FechaEntrada: '17 NOVIEMBRE',
-            FechaSalida: '24 NOVIEMBRE',
-            id: 2,
-            Usuario: 'juan222',
-            Habitacion: 'Habitacion doble 11233'
-        }
-    ]);
-
-    const [formData, setFormData] = useState({
-        FechaEntrada: '',
-        FechaSalida: '',
-        Usuario: '',
-        Habitacion: ''
+function Reserva() {
+    const urlBase = appConfig.API_BASE_URL + appConfig.RESERVAS;
+    const [reload, setReload] = useState(false)
+    
+    const [reservaData, setreservaData] = useState([]);
+    //formulario de req.body para editar una reserva
+    const [todoEdit, setTodoEdit] = useState({
+        ...reservaData,
+        id: ""
     });
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    //manejo de cambios de formulario de edicion
+    function handleEditChange(e) {
+        const { name, value } = e.target;
+        setTodoEdit({
+            ...todoEdit,
+            [name]: value,
+        })
+    }
+    //manejo de eliminacion de reservas
+    async function handleDelete(idReservas) {
+        if (confirm("Desea eliminar esta reserva?")) {
+            try {
+                const { data } = await axios({
+                    method: "delete",
+                    url: urlBase,
+                    params: { id: idReservas }
+                })
+                alert("Reserva eliminada")
+                setReload(!reload)
+            } catch (error) {
+                console.log(error);
+            }
+        } else alert("operacion cancelada")
+    }
+    //manejo de edicion de reservas
+    async function handleEdit() {
+        if (confirm("Desea actualizar esta reserva?")) {
+            try {
+                const { data } = await axios({
+                    method: "patch",
+                    url: urlBase,
+                    data: todoEdit
+                })
+                alert("Reserva editada")
+                setReload(!reload)
+            } catch (error) {
+                console.log(error);
+            }
+        } else alert("Operacion cancelada")
+    }
 
-    const [todoEditId, setTodoEditId] = useState(null);
-
-    const handleChange = ({ target }) => {
-        setFormData({ ...formData, [target.name]: target.value });
-    };
-
-    const addTodo = (e) => {
-        e.preventDefault();
-        if (todoEditId !== null) {
-            const newTodo = [...todoArray];
-            let todo = newTodo.find((todo) => todo.id === todoEditId);
-            todo.FechaEntrada = formData.FechaEntrada;
-            todo.FechaSalida = formData.FechaSalida;
-            todo.Usuario = formData.Usuario;
-            todo.Habitacion = formData.Habitacion;
-            setTodoArray(newTodo);
-            setTodoEditId(null);
-            setFormData({ FechaEntrada: '', FechaSalida: '', Usuario: '', Habitacion: '' });
-        } else {
-            if (formData.FechaEntrada !== '' && formData.FechaSalida !== '' && formData.Usuario !== '' && formData.Habitacion !== '') {
-                const todo = {
-                    FechaEntrada: formData.FechaEntrada,
-                    FechaSalida: formData.FechaSalida,
-                    id: Date.now(),
-                    Usuario: formData.Usuario,
-                    Habitacion: formData.Habitacion
-                };
-
-                setTodoArray([...todoArray, todo]);
-                setFormData({ FechaEntrada: '', FechaSalida: '', Usuario: '', Habitacion: '' });
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data } = await axios.get(urlBase)
+                setreservaData(data.reservas)
+            } catch (error) {
+                console.log(error);
             }
         }
-    };
-
-    const deleteTodo = (id) => {
-        const confirmDelete = window.confirm('¿Estás seguro que deseas eliminarlo? La eliminación será permanente');
-
-        if (confirmDelete) {
-            const newTodos = todoArray.filter((todo) => todo.id !== id);
-            setTodoArray(newTodos);
-        }
-    };
-
-    const todoEdit = (id) => {
-        const todo = todoArray.find((todo) => todo.id === id);
-        setFormData({
-            FechaEntrada: todo.FechaEntrada,
-            FechaSalida: todo.FechaSalida,
-            Usuario: todo.Usuario,
-            Habitacion: todo.Habitacion
-        });
-        setTodoEditId(id);
-    };
+        fetchData()
+    }, [reload])
 
     return (
         <>
-            <div className="cover-container">
-                <div className="container-max cover-form">
-                    <form className="input-group shadow rounded p-3" onSubmit={addTodo} formulario>
-                        <div className="container-form">
-                            <input
-                                className="form-control"
-                                name="FechaEntrada"
-                                required
-                                minlength="5"
-                                type="text"
-                                placeholder="Fecha de Entrada"
-                                value={formData.FechaEntrada}
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-control"
-                                name="FechaSalida"
-                                required
-                                minlength="5"
-                                type="text"
-                                placeholder="Fecha de Salida"
-                                value={formData.FechaSalida}
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-control"
-                                name="Usuario"
-                                required
-                                minlength="5"
-                                type="text"
-                                placeholder="Usuario"
-                                value={formData.Usuario}
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-control" name="Habitacion" required minlength="5" type="text" placeholder="Habitacion" value={formData.Habitacion} onChange={handleChange}/>
-                            <input className="btn btn-primary" type="submit" value="Agregar" />
-                        </div>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Editar</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <form action="">
+                        <input
+                            className="form-control"
+                            name="fechaEntrada"
+                            type="text"
+                            onChange={(e) => handleEditChange(e)}
+                            placeholder="Fecha Entrada"
+                            required
+                        />
+                        <input
+                            className="form-control"
+                            name="fechaSalida"
+                            type="text"
+                            onChange={(e) => handleEditChange(e)}
+                            placeholder="Fecha Salida"
+                            required
+                        />
+                        <input
+                            className="form-control"
+                            name="nombre"
+                            type="text"
+                            onChange={(e) => handleEditChange(e)}
+                            placeholder="Nombre y apellido"
+                            required
+                        />
+                        <input
+                            className="form-control"
+                            name="email"
+                            type="text"
+                            onChange={(e) => handleEditChange(e)}
+                            placeholder="Email"
+                            required
+                        />            
                     </form>
-                </div>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Cerrar
+                    </Button>
+                    <Button
+                        variant="primary"
+                        onClick={() => {
+                            handleEdit();
+                            handleClose();
+                        }}
+                    >
+                        Guardar
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+            <div>
+        <h2>Elementos Agregados</h2>
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Fecha Entrada</th>
+              <th>Fecha Salida</th>
+              <th>Nombre y Apellido</th>
+              <th>Email</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+          {reservaData && reservaData.length > 0 ? (
+              reservaData.map((reserva) => (
+                <tr key={reserva._id}>
+                  <td>{reserva.fechaEntrada}</td>
+                  <td>{reserva.fechaSalida}</td>
+                  <td>{reserva.habitacion}</td>
+                  <td>{reserva.nombre}</td>
+                  <td>{reserva.email}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        setTodoEdit((todoEdit) => ({ ...todoEdit, id: reserva._id, habitacion: reserva.habitacion}));
+                        handleShow();
+                      }}
+                    >
+                      ✏️
+                    </button>{" "}
+                    <button onClick={() => handleDelete(reserva._id)}>🗑️</button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="8">No hay reservas disponibles</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
 
-                <div className="shadow rounded p-3 mt-5 w-100 cover-container">
-                    <div className="container-delete-tareas">
-                        <h4>RESERVAS</h4>
-                    </div>
-                    {todoArray.map((todo) => (
-                        <div key={todo.id} className="elementos-todo">
-                            <p className={`p-0 m-0 flex-grow-1`}>
-                                <span className='text-muted'>Fecha de Entrada: {todo.FechaEntrada}</span><br />
-                                <span className='text-muted'>Fecha de Salida: {todo.FechaSalida}</span><br />
-                                <span className='text-muted'>Usuario: {todo.Usuario}</span><br />
-                                <span className='text-muted'>Habitacion: {todo.Habitacion}</span>
-                            </p>
-                            <button className='btn btn-warning' onClick={() => todoEdit(todo.id)}>✏</button>
-                            <button className='btn btn-danger' onClick={() => deleteTodo(todo.id)}>🗑</button>
-                        </div>
-                    ))}
-                    <div className='total-info'>
-                        <span>Total de Reservas: {todoArray.length}</span>
-                    </div>
-                </div>
-            </div>
         </>
     );
 }
