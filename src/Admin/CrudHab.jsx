@@ -45,7 +45,8 @@ const CrudHab = () => {
     });
   }
   //manejo de creacion de habitacion
-  async function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault ()
     try {
       const { data } = await axios({
         method: "post",
@@ -198,28 +199,34 @@ const CrudHab = () => {
             </tr>
           </thead>
           <tbody>
-            {habitacionesData.map((hab) => (
-              <tr key={hab._id}>
-                <td>{hab.titulo}</td>
-                <td>{hab.imagen1}</td>
-                <td>{hab.descripcion1}</td>
-                <td>{hab.descripcion2}</td>
-                <td>{hab.descripcion3}</td>
-                <td>{hab.precio}</td>
-                <td>{hab.tipo}</td>
-                <td>
-                  <button
-                    onClick={() => {
-                      setEditForm((editForm) => ({ ...editForm, id: hab._id }));
-                      handleShow();
-                    }}
-                  >
-                    ✏️
-                  </button>{" "}
-                  <button onClick={() => handleDelete(hab._id)}>🗑️</button>
-                </td>
+          {habitacionesData && habitacionesData.length > 0 ? (
+              habitacionesData.map((hab) => (
+                <tr key={hab._id}>
+                  <td>{hab.titulo}</td>
+                  <td>{hab.imagen1}</td>
+                  <td>{hab.descripcion1}</td>
+                  <td>{hab.descripcion2}</td>
+                  <td>{hab.descripcion3}</td>
+                  <td>{hab.precio}</td>
+                  <td>{hab.tipo}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        setEditForm((editForm) => ({ ...editForm, id: hab._id }));
+                        handleShow();
+                      }}
+                    >
+                      ✏️
+                    </button>{" "}
+                    <button onClick={() => handleDelete(hab._id)}>🗑️</button>
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="8">No hay habitaciones disponibles</td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>

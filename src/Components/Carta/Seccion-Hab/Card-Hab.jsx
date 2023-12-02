@@ -26,7 +26,7 @@ function CardHab(){
       return(
         // opcion === 0 ? //if
         <>
-        <div className="cover-cover-cards-hab">
+        <div className="cover-cover-cards-hab" id="habitacion-seccion">
             <div className="h2-cards-hab"><h2>SELECCIONA TU HABITACION</h2></div>
         <div className="cover-cards-hab">
 
