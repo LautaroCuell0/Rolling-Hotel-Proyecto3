@@ -8,14 +8,7 @@ import appConfig from "../../endPoints";
 function Reserva() {
     const urlBase = appConfig.API_BASE_URL + appConfig.RESERVAS;
     const [reload, setReload] = useState(false)
-    //formulario de req.body para la creacion de reservas
-    const [todoArray, setTodoArray] = useState({
-        fechaEntrada: '',
-        fechaSalida: '',
-        habitacion: '',
-        nombre: '',
-        email: '',
-    })
+    
     const [reservaData, setreservaData] = useState([]);
     //formulario de req.body para editar una reserva
     const [todoEdit, setTodoEdit] = useState({
@@ -29,30 +22,9 @@ function Reserva() {
     function handleEditChange(e) {
         const { name, value } = e.target;
         setTodoEdit({
-            todoEdit,
+            ...todoEdit,
             [name]: value,
         })
-    }
-    //manejo de cambios en formulario de creacion 
-    function handleChange(e) {
-        const { name, value } = e.target;
-        setTodoArray({
-            ...todoArray,
-            [name]: value
-        })
-    }
-    //manejo de creacion de reservas
-    async function handleSubmit(e) {
-        e.preventDefault()
-        try {
-            const { data } = await axios({
-                method: "post",
-                url: urlBase,
-                data: todoArray
-            })
-        } catch (error) {
-            console.log(error);
-        }
     }
     //manejo de eliminacion de reservas
     async function handleDelete(idReservas) {
@@ -75,7 +47,7 @@ function Reserva() {
         if (confirm("Desea actualizar esta reserva?")) {
             try {
                 const { data } = await axios({
-                    method: "put",
+                    method: "patch",
                     url: urlBase,
                     data: todoEdit
                 })
@@ -91,7 +63,7 @@ function Reserva() {
         const fetchData = async () => {
             try {
                 const { data } = await axios.get(urlBase)
-                setreservaData(data.Reserva)
+                setreservaData(data.reservas)
             } catch (error) {
                 console.log(error);
             }
@@ -109,60 +81,36 @@ function Reserva() {
                     <form action="">
                         <input
                             className="form-control"
-                            name="titulo"
+                            name="fechaEntrada"
                             type="text"
                             onChange={(e) => handleEditChange(e)}
-                            placeholder="Titulo"
+                            placeholder="Fecha Entrada"
                             required
                         />
                         <input
                             className="form-control"
-                            name="imagen1"
+                            name="fechaSalida"
                             type="text"
                             onChange={(e) => handleEditChange(e)}
-                            placeholder="Imagen"
+                            placeholder="Fecha Salida"
                             required
                         />
                         <input
                             className="form-control"
-                            name="descripcion1"
+                            name="nombre"
                             type="text"
                             onChange={(e) => handleEditChange(e)}
-                            placeholder="Descripción"
+                            placeholder="Nombre y apellido"
                             required
                         />
                         <input
                             className="form-control"
-                            name="descripcion2"
+                            name="email"
                             type="text"
                             onChange={(e) => handleEditChange(e)}
-                            placeholder="Descripción"
+                            placeholder="Email"
                             required
-                        />
-                        <input
-                            className="form-control"
-                            name="descripcion3"
-                            type="text"
-                            onChange={(e) => handleEditChange(e)}
-                            placeholder="Descripción"
-                            required
-                        />
-                        <input
-                            className="form-control"
-                            name="precio"
-                            type="number"
-                            onChange={(e) => handleEditChange(e)}
-                            placeholder="Precio"
-                            required
-                        />
-                        <input
-                            className="form-control"
-                            name="tipo"
-                            type="number"
-                            onChange={(e) => handleEditChange(e)}
-                            placeholder="Tipo"
-                            required
-                        />
+                        />            
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -204,13 +152,13 @@ function Reserva() {
                   <td>
                     <button
                       onClick={() => {
-                        setTodoEdit((todoEdit) => ({ ...todoEdit, id: reserva._id}));
+                        setTodoEdit((todoEdit) => ({ ...todoEdit, id: reserva._id, habitacion: reserva.habitacion}));
                         handleShow();
                       }}
                     >
                       ✏️
                     </button>{" "}
-                    <button onClick={() => handleDelete()}>🗑️</button>
+                    <button onClick={() => handleDelete(reserva._id)}>🗑️</button>
                   </td>
                 </tr>
               ))
@@ -222,52 +170,6 @@ function Reserva() {
           </tbody>
         </table>
       </div>
-            <div className="cover-container">
-                <div className="container-max cover-form">
-                    <form className="input-group shadow rounded p-3" id='formReservas' onSubmit={handleSubmit}>
-                        <div className="container-form">
-                            <input
-                                className="form-control"
-                                name="fechaEntrada"
-                                required
-                                type="text"
-                                placeholder="Fecha de Entrada"
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-control"
-                                name="fechaSalida"
-                                required
-                                type="text"
-                                placeholder="Fecha de Salida"
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-control"
-                                name="nombre"
-                                required
-                                type="text"
-                                placeholder="Nombre y Apellido"
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-control"
-                                name="email"
-                                required
-                                type="email"
-                                placeholder="Email"
-                                onChange={handleChange}
-                            />
-                            <button type='submit' htmlFor="formReservas" >Agregar</button>
-                        </div>
-                    </form>
-                </div>
-
-
-                <div className='total-info'>
-                    <span>Total de Reservas: {todoArray.length}</span>
-                </div>
-            </div>
 
         </>
     );
