@@ -4,6 +4,7 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import appConfig from "../../endPoints";
+import Table from 'react-bootstrap/Table';
 
 function Reserva() {
     const urlBase = appConfig.API_BASE_URL + appConfig.RESERVAS;
@@ -129,26 +130,29 @@ function Reserva() {
                 </Modal.Footer>
             </Modal>
             <div>
+            <div className='cover-titulo'>
         <h2>Elementos Agregados</h2>
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Fecha Entrada</th>
-              <th>Fecha Salida</th>
-              <th>Nombre y Apellido</th>
-              <th>Email</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody>
-          {reservaData && reservaData.length > 0 ? (
+             </div>
+        <Table striped="columns">
+      <thead>
+        <tr>
+            <th>Fecha Entrada</th>
+            <th>Fecha Salida</th>
+            <th className='habitacion'>Habitacion</th>
+            <th className='nombreyapellido'>Nombre y Apellido</th>
+            <th className='email'>Email</th>
+            <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      {reservaData && reservaData.length > 0 ? (
               reservaData.map((reserva) => (
                 <tr key={reserva._id}>
-                  <td>{reserva.fechaEntrada}</td>
-                  <td>{reserva.fechaSalida}</td>
-                  <td>{reserva.habitacion}</td>
-                  <td>{reserva.nombre}</td>
-                  <td>{reserva.email}</td>
+                  <td style={{ maxWidth: '100px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{reserva.fechaEntrada}</td>
+                  <td style={{ maxWidth: '100px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{reserva.fechaSalida}</td>
+                  <td className='habitacion'>{reserva.habitacion}</td>
+                  <td className='nombreyapellido'>{reserva.nombre}</td>
+                  <td className='email'>{reserva.email}</td>
                   <td>
                     <button
                       onClick={() => {
@@ -167,8 +171,8 @@ function Reserva() {
                 <td colSpan="8">No hay reservas disponibles</td>
               </tr>
             )}
-          </tbody>
-        </table>
+      </tbody>
+    </Table>
       </div>
 
         </>
